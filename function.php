@@ -405,7 +405,7 @@ function footers()
     
             <div class="box">
                 <h3>locations</h3>
-                <a href="#">india</a>
+                <a href="#">bakbakbak</a>
                 <a href="#">japan</a>
                 <a href="#">russia</a>
                 <a href="#">USA</a>
