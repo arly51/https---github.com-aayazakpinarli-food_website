@@ -42,6 +42,8 @@ include "database/conf.php";
             <a href="#dishes">dishes</a>
             <a href="#about">about</a>
             <a href="#menu">menu</a>
+            
+            <a href="#order">order</a>
             <a href="admin/index.php" id="adminLink">Admin Panel</a>
                  </nav>
     
@@ -403,7 +405,7 @@ function footers()
     
             <div class="box">
                 <h3>locations</h3>
-                <a href="#">eylul</a>
+                <a href="#">india</a>
                 <a href="#">japan</a>
                 <a href="#">russia</a>
                 <a href="#">USA</a>
@@ -416,16 +418,14 @@ function footers()
                 <a href="#">dishes</a>
                 <a href="#">about</a>
                 <a href="#">menu</a>
-                <a href="#">reivew</a>
             </div>
     
             <div class="box">
                 <h3>contact info</h3>
-                <a href="#">+123-456-7890</a>
-                <a href="#">+111-222-3333</a>
-                <a href="#">shaikhanas@gmail.com</a>
-                <a href="#">anasbhai@gmail.com</a>
-                <a href="#">mumbai, india - 400104</a>
+                <a href="#">+90 534 584 16 65</a>
+                <a href="#">+90 530 266 86 45</a>
+                <a href="#">eaykose@gmail.com</a>
+                <a href="#">egehan@gmail.com</a>
             </div>
     
             <div class="box">
@@ -438,7 +438,6 @@ function footers()
     
         </div>
     
-        <div class="credit"> copyright @ 2021 by <span>mr. web designer</span> </div>
     
     </section>
     
