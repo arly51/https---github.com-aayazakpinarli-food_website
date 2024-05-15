@@ -35,13 +35,15 @@ include "database/conf.php";
         <body>
     <header class="d-flex">
     
-        <a href="#" class="logo"><i class="fas fa-utensils "></i>resto.</a>
+        <a href="#" class="logo"><i class="fas fa-utensils "></i>CodersMarket</a>
     
         <nav class="navbar">
             <a class="active" href="#home">home</a>
             <a href="#dishes">dishes</a>
             <a href="#about">about</a>
             <a href="#menu">menu</a>
+            
+            <a href="#order">order</a>
             <a href="admin/index.php" id="adminLink">Admin Panel</a>
                  </nav>
     
@@ -201,8 +203,8 @@ function dishes()
     
     <section class="dishes" id="dishes">
     <div class="title-head">
-        <h3 class="sub-heading"> our dishes </h3>
-        <h1 class="heading"> popular dishes </h1>
+        <h3 class="sub-heading"> our products </h3>
+        <h1 class="heading"> popular products </h1>
         </div>
     
         <div  id="p_msg"></div>
@@ -234,7 +236,7 @@ function introduction()
                     </div>
 
                     <div class="content">
-                        <h3>best food in the country</h3>
+                        <h3>best market in the country</h3>
                         <p>At our market, we are proud to offer you great food that tastes amazing and is always fresh. We work with local farmers and trusted suppliers to make sure you get the best fruits, vegetables, meats, and dairy products.</p>
                         <p>Our food is picked for its quality and flavor, so you can enjoy really good meals every day. When you shop with us you are getting top-notch, fresh food and supporting local producers too. Come visit us for great food that keeps you and your family healthy and happy! </p>
                         <div class="icons-container">
@@ -403,7 +405,7 @@ function footers()
     
             <div class="box">
                 <h3>locations</h3>
-                <a href="#">india</a>
+                <a href="#">bakbakbak</a>
                 <a href="#">japan</a>
                 <a href="#">russia</a>
                 <a href="#">USA</a>
@@ -416,29 +418,18 @@ function footers()
                 <a href="#">dishes</a>
                 <a href="#">about</a>
                 <a href="#">menu</a>
-                <a href="#">reivew</a>
             </div>
     
             <div class="box">
                 <h3>contact info</h3>
-                <a href="#">+123-456-7890</a>
-                <a href="#">+111-222-3333</a>
-                <a href="#">shaikhanas@gmail.com</a>
-                <a href="#">anasbhai@gmail.com</a>
-                <a href="#">mumbai, india - 400104</a>
-            </div>
-    
-            <div class="box">
-                <h3>follow us</h3>
-                <a href="#">facebook</a>
-                <a href="#">twitter</a>
-                <a href="#">instagram</a>
-                <a href="#">linkedin</a>
+                <a href="#">+90 534 584 16 65</a>
+                <a href="#">+90 530 266 86 45</a>
+                <a href="#">eaykose@gmail.com</a>
+                <a href="#">egehan@gmail.com</a>
             </div>
     
         </div>
     
-        <div class="credit"> copyright @ 2021 by <span>mr. web designer</span> </div>
     
     </section>
     
@@ -468,5 +459,5 @@ function footers()
     
     
     </body>
-    </html>';
+    </html>';
 };
