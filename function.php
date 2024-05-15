@@ -42,8 +42,6 @@ include "database/conf.php";
             <a href="#dishes">dishes</a>
             <a href="#about">about</a>
             <a href="#menu">menu</a>
-            
-            <a href="#order">order</a>
             <a href="admin/index.php" id="adminLink">Admin Panel</a>
                  </nav>
     
@@ -219,57 +217,7 @@ function dishes()
     
     <!-- dishes section ends ----->';
 };
-function review()
-{
-    include 'database/conf.php';
-    echo '
-    <!-- review section starts  -->
     
-    <section class="review" id="review">
-    <div class="title-head">
-        <h3 class="sub-heading"> customer review </h3>
-        <h1 class="heading"> what they say </h1>
-    </div>
-        <div class="swiper-container review-slider">
-    
-            <div class="swiper-wrapper">';
-    
-    $q=$conn->query("SELECT fb.msg ,fb.date , r.Name,r.image FROM `feedback` as fb JOIN register as r on fb.user_id = r.unique_id");
-    if(mysqli_num_rows($q)>0){
-        while($row = mysqli_fetch_assoc($q)){
-
-        
-    echo'<div class="swiper-slide slide">
-                    <i class="fas fa-quote-right"></i>
-                    <div class="user">
-                        <img src="database/upload/'.$row["image"].'" alt="">
-                        <div class="user-info">
-                            <h3>'.$row["Name"].'</h3>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <br>
-                                   <span>'.$row["date"].'</span>
-                                   
-                            </div>
-                        </div>
-                    </div>
-                    <p>'.$row["msg"].'</p>
-                </div>';
-                                }
-        }
-            echo'</div>
-    
-        </div>
-        
-    </section>
-    
-    <!-- review section ends -->
-    ';
-};
 function introduction()
 {
     echo '<!-- about section starts  -->
@@ -286,7 +234,7 @@ function introduction()
                     </div>
 
                     <div class="content">
-                        <h3>best food in the country</h3>
+                        <h3>best market in the country</h3>
                         <p>At our market, we are proud to offer you great food that tastes amazing and is always fresh. We work with local farmers and trusted suppliers to make sure you get the best fruits, vegetables, meats, and dairy products.</p>
                         <p>Our food is picked for its quality and flavor, so you can enjoy really good meals every day. When you shop with us you are getting top-notch, fresh food and supporting local producers too. Come visit us for great food that keeps you and your family healthy and happy! </p>
                         <div class="icons-container">
@@ -322,10 +270,7 @@ function special_menu()
             <section class="menu" id="menu">
             <div class="title-head">
                 <h3 class="sub-heading"> our menu </h3>
-                <h1 class="heading"> today`s speciality </h1>
                 </div>
-            
-                <div id="weekly_msg"></div>
                 <div class="box-container" id="menu_container">
                 <div class="row" id="WeeklyProGall">
                 
@@ -369,11 +314,6 @@ function sign_up()
                                 <div class="form-group">
                                     <label for="re-pass"><i class="fas fa-lock"></i></label>
                                     <input type="password" name="re_pass" id="re_pass" required placeholder="Repeat your password"/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="formFileMultiple"><i class="fas fa-image"></i></label>
-                                    <input class="form-control w-75" name="user_image" required style=" float:right;" type="file" id="formFileMultiple" multiple>
-    
                                 </div>
                                 <div class="form-group">
                                     <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
@@ -443,16 +383,6 @@ function sign_in()
                     <div class="col-6">
                     <a href="register.php" class="signup-image-link position-absolute ">Create an account <u class=" text-info ">Sign in</u> </a>
                     </div>
-                    <div class="col-6">
-                    <div class="social-login d-flex justify-content-between align-self-center">
-                    <span class="social-label">Or login with</span>
-                    <ul class="socials d-flex">
-                        <li class=" w-50 "><a class="d-flex" href="#"><i class="display-flex-center text-center zmdi zmdi-facebook"></i></a></li>
-                        <li class=" w-50 "><a class="d-flex" href="#"><i class="display-flex-center text-center zmdi zmdi-twitter"></i></a></li>
-                        <li class=" w-50 "><a class="d-flex" href="#"><i class="display-flex-center text-center zmdi zmdi-google"></i></a></li>
-                    </ul>
-                </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -461,6 +391,7 @@ function sign_in()
         </div>
         ';
 };
+
 function footers()
 {
     echo ' 
@@ -472,7 +403,7 @@ function footers()
     
             <div class="box">
                 <h3>locations</h3>
-                <a href="#">turkey</a>
+                <a href="#">eylul</a>
                 <a href="#">japan</a>
                 <a href="#">russia</a>
                 <a href="#">USA</a>
@@ -537,5 +468,5 @@ function footers()
     
     
     </body>
-    </html>';
+    </html>';
 };
