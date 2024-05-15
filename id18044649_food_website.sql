@@ -236,17 +236,17 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `p_id`, `cat_id`, `scat_id`, `u_id`, `p_title`, `p_subtitle`, `p_desc`, `p_prize`, `p_image`, `status`, `action`, `date`) VALUES
-(1, 'p-10001', 'cat-20001', 'scat-30001', '1357678', 'zinger burger', 'so spicy and ziz izz', ' spicy and low fat', 115, 'dish-1.png', 'show', 'far', '2023-02-20 17:46:03.000000'),
-(2, 'p-10002', 'cat-20004', 'scat-30003', '1357678', 'roster moster', 'small roster', ' this is roster', 110, 'dish-2.png', 'show', 'far', '2023-02-21 17:46:03.000000'),
-(3, 'p-10003', 'cat-20003', 'scat-30011', '1357678', 'down pizza', 'so Delicious', '  pizza is  is very nice', 250, 'dish-4.png', 'show', 'far', '2023-03-01 20:14:29.000000'),
-(4, 'p-10004', 'cat-20004', 'scat-30013', '1357678', 'legs roster', 'larger roster', '  this is roster', 160, 'dish-6.png', 'show', 'far', '2023-02-22 17:46:03.000000'),
-(5, 'p-10005', 'cat-20005', 'scat-30004', '1357678', 'black ice cream', 'so Delicious', '   ice cream is nice', 150, 'dish-5.png', 'hide', 'far', '2023-02-23 17:46:03.000000'),
-(6, 'p-10006', 'cat-20001', 'scat-30014', '1357678', 'ELK burger', 'Lean, delicious ', '   Lean, delicious and free-range , Awesome In Rang , Elk Burger is Spicy', 360, 'dish-7.png', 'show', 'far', '2023-02-23 17:46:03.000000'),
-(13, 'p-10008', 'cat-20008', 'scat-30012', '1357678', 'Pepper', 'Pepper', 'Pepper, including black, white, and green types, is a key global spice produced.', 250, 'pepper.png', 'show', 'far', '2023-02-24 17:46:03.000000'),
-(14, 'p-10009', 'cat-20001', 'scat-30009', '1357678', 'Tomato', 'Tomato', 'Tomatoes are a staple in our market, widely used in cooking and food processing. ', 190, 'tomato.png', 'show', 'far', '2023-02-25 17:46:03.000000'),
-(17, 'p-10010', 'cat-20005', 'scat-30010', '1357678', 'Mango', 'Mango ', ' Mangoes are a popular tropical fruit in our market, known for their sweet taste and nutritional benefits.', 250, 'mangoe.png', 'show', 'far', '2023-02-26 17:46:03.000000'),
-(18, 'p-10011', 'cat-20007', 'scat-30015', '1357678', 'Avocado', 'Avocado', 'Avocados are a highly valued fruit in the global market, celebrated for their rich taste and health benefits. ', 200, 'avocado', 'show', 'far', '2023-02-28 17:46:03.000000'),
-(19, 'p-10012', 'cat-20002', 'scat-30005', '1357678', 'Spinach', 'Spinach', 'Spinach is a widely consumed leafy green vegetable in the global market, valued for its nutritional benefits and versatility in cooking. ', 1100, 'spinach.png', 'show', 'far', '2023-03-01 20:15:34.000000');
+(1, 'p-10001', 'cat-20001', 'scat-30001', '1357678', 'Milk', 'Milk', 'Essential for its nutritional value and versatility in dairy products. ', 30, 'milk.png', 'show', 'far', '2023-02-20 17:46:03.000000'),
+(2, 'p-10002', 'cat-20004', 'scat-30003', '1357678', 'Cheese', 'Cheese', 'Major product in the global dairy market, valued for its diverse varieties and culinary uses.', 50, 'cheese.png', 'show', 'far', '2023-02-21 17:46:03.000000'),
+(3, 'p-10003', 'cat-20003', 'scat-30011', '1357678', 'Yoghurt', 'Yoghurt', 'Yogurt is a significant product in the global dairy market, appreciated for its health benefits and versatility', 55, 'yoghurt.png', 'show', 'far', '2023-03-01 20:14:29.000000'),
+(4, 'p-10004', 'cat-20004', 'scat-30013', '1357678', 'Ice cream', 'Ice cream', 'Ice cream is a popular product in the global dairy market, known for its wide variety of flavors and widespread appeal', 25, 'icecream.png', 'show', 'far', '2023-02-22 17:46:03.000000'),
+(5, 'p-10005', 'cat-20005', 'scat-30004', '1357678', 'Rice', 'Rice', 'Rice is a staple food in the global market, essential for its versatility and nutritional value. ', 17, 'rice.png', 'hide', 'far', '2023-02-23 17:46:03.000000'),
+(6, 'p-10006', 'cat-20001', 'scat-30014', '1357678', 'Shampoo', 'Shampoo', 'N/A', 100, 'shampoo.png', 'show', 'far', '2023-02-23 17:46:03.000000'),
+(13, 'p-10008', 'cat-20008', 'scat-30012', '1357678', 'Pepper', 'Pepper', 'Pepper, including black, white, and green types, is a key global spice produced.', 10, 'pepper.png', 'show', 'far', '2023-02-24 17:46:03.000000'),
+(14, 'p-10009', 'cat-20001', 'scat-30009', '1357678', 'Tomato', 'Tomato', 'Tomatoes are a staple in our market, widely used in cooking and food processing. ', 7, 'tomato.png', 'show', 'far', '2023-02-25 17:46:03.000000'),
+(17, 'p-10010', 'cat-20005', 'scat-30010', '1357678', 'Mango', 'Mango ', ' Mangoes are a popular tropical fruit in our market, known for their sweet taste and nutritional benefits.', 20, 'mangoe.png', 'show', 'far', '2023-02-26 17:46:03.000000'),
+(18, 'p-10011', 'cat-20007', 'scat-30015', '1357678', 'Avocado', 'Avocado', 'Avocados are a highly valued fruit in the global market, celebrated for their rich taste and health benefits. ', 20, 'avocado', 'show', 'far', '2023-02-28 17:46:03.000000'),
+(19, 'p-10012', 'cat-20002', 'scat-30005', '1357678', 'Spinach', 'Spinach', 'Spinach is a widely consumed leafy green vegetable in the global market, valued for its nutritional benefits and versatility in cooking. ', 8, 'spinach.png', 'show', 'far', '2023-03-01 20:15:34.000000');
 
 -- --------------------------------------------------------
 
