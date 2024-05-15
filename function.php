@@ -39,11 +39,9 @@ include "database/conf.php";
     
         <nav class="navbar">
             <a class="active" href="#home">home</a>
-            <a href="#dishes">dishes</a>
+            <a href="#products">products</a>
             <a href="#about">about</a>
-            <a href="#menu">menu</a>
-            
-            <a href="#order">order</a>
+            <a href="#Products List">Products List</a>
             <a href="admin/index.php" id="adminLink">Admin Panel</a>
                  </nav>
     
