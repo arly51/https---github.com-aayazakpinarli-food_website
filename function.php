@@ -371,11 +371,6 @@ function sign_up()
                                     <input type="password" name="re_pass" id="re_pass" required placeholder="Repeat your password"/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="formFileMultiple"><i class="fas fa-image"></i></label>
-                                    <input class="form-control w-75" name="user_image" required style=" float:right;" type="file" id="formFileMultiple" multiple>
-    
-                                </div>
-                                <div class="form-group">
                                     <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                                     <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                                 </div>
@@ -442,16 +437,6 @@ function sign_in()
                 
                     <div class="col-6">
                     <a href="register.php" class="signup-image-link position-absolute ">Create an account <u class=" text-info ">Sign in</u> </a>
-                    </div>
-                    <div class="col-6">
-                    <div class="social-login d-flex justify-content-between align-self-center">
-                    <span class="social-label">Or login with</span>
-                    <ul class="socials d-flex">
-                        <li class=" w-50 "><a class="d-flex" href="#"><i class="display-flex-center text-center zmdi zmdi-facebook"></i></a></li>
-                        <li class=" w-50 "><a class="d-flex" href="#"><i class="display-flex-center text-center zmdi zmdi-twitter"></i></a></li>
-                        <li class=" w-50 "><a class="d-flex" href="#"><i class="display-flex-center text-center zmdi zmdi-google"></i></a></li>
-                    </ul>
-                </div>
                     </div>
                     </div>
                 </div>
