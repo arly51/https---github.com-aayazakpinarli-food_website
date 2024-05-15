@@ -42,8 +42,6 @@ include "database/conf.php";
             <a href="#dishes">dishes</a>
             <a href="#about">about</a>
             <a href="#menu">menu</a>
-            
-            <a href="#order">order</a>
             <a href="admin/index.php" id="adminLink">Admin Panel</a>
                  </nav>
     
@@ -219,57 +217,7 @@ function dishes()
     
     <!-- dishes section ends ----->';
 };
-function review()
-{
-    include 'database/conf.php';
-    echo '
-    <!-- review section starts  -->
     
-    <section class="review" id="review">
-    <div class="title-head">
-        <h3 class="sub-heading"> customer review </h3>
-        <h1 class="heading"> what they say </h1>
-    </div>
-        <div class="swiper-container review-slider">
-    
-            <div class="swiper-wrapper">';
-    
-    $q=$conn->query("SELECT fb.msg ,fb.date , r.Name,r.image FROM `feedback` as fb JOIN register as r on fb.user_id = r.unique_id");
-    if(mysqli_num_rows($q)>0){
-        while($row = mysqli_fetch_assoc($q)){
-
-        
-    echo'<div class="swiper-slide slide">
-                    <i class="fas fa-quote-right"></i>
-                    <div class="user">
-                        <img src="database/upload/'.$row["image"].'" alt="">
-                        <div class="user-info">
-                            <h3>'.$row["Name"].'</h3>
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                <br>
-                                   <span>'.$row["date"].'</span>
-                                   
-                            </div>
-                        </div>
-                    </div>
-                    <p>'.$row["msg"].'</p>
-                </div>';
-                                }
-        }
-            echo'</div>
-    
-        </div>
-        
-    </section>
-    
-    <!-- review section ends -->
-    ';
-};
 function introduction()
 {
     echo '<!-- about section starts  -->
@@ -322,10 +270,7 @@ function special_menu()
             <section class="menu" id="menu">
             <div class="title-head">
                 <h3 class="sub-heading"> our menu </h3>
-                <h1 class="heading"> today`s speciality </h1>
                 </div>
-            
-                <div id="weekly_msg"></div>
                 <div class="box-container" id="menu_container">
                 <div class="row" id="WeeklyProGall">
                 
@@ -446,6 +391,7 @@ function sign_in()
         </div>
         ';
 };
+
 function footers()
 {
     echo ' 
