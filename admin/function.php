@@ -35,13 +35,7 @@ function ad_headers(){
                                   <li class="nav-item">
                                       <a class="nav-link" href="#">Link</a>
                                   </li>
-                                  <li class="nav-item dropdown" data-dropdown="#link">
-                                      <a class="nav-link dropdown-toggle" href="#"   >Dropdown</a>
-                                      <div class="dropdown-menu" id="link">
-                                          <a class="dropdown-item" href="#">Action 1</a>
-                                          <a class="dropdown-item" href="#">Action 2</a>
-                                      </div>
-                                  </li>
+
                                 </ul>
                               </div>
 
@@ -59,13 +53,7 @@ function ad_headers(){
                               <li class="nav-item">
                                   <a class="nav-link" href="#">Link</a>
                               </li>
-                              <li class="nav-item dropdown" data-dropdown="#link1">
-                                  <a class="nav-link dropdown-toggle" href="#"   >Dropdown</a>
-                                  <div class="dropdown-menu" id="link1">
-                                      <a class="dropdown-item" href="#">Action 1</a>
-                                      <a class="dropdown-item" href="#">Action 2</a>
-                                  </div>
-                              </li>
+
                             </ul>
                           <li class="sidebar-item active">
                               <a href="" class=""><img src="img/user1-128x128.jpg" class="userImg" width="30px" height="30px" style="border-radius: 50%;" alt=""></a>
@@ -77,10 +65,7 @@ function ad_headers(){
                           <li class="sidebar-item dropdown position-relative" data-dropdown="#table">
                               <a href="" class=""><i class="fas fa-table"></i></a>
                               <span class=" dropdown-toggle">Tables</span> 
-                              <div class=" dropdown-menu  "  id="table">
-                                  
-                                  
-                                  
+                              <div class=" dropdown-menu  "  id="table">                         
                               </div>    
                           </li>
                           
@@ -154,23 +139,11 @@ function tables(){
                       </div>
                   </div>
         <div class="card-header d-flex justify-content-between py-3">
-            <h6 class="m-0 font-weight-bold dpanel-text table_heading">User Data </h6>
-            <div class="input-group d-flex-between  w-50 " >
-            
-            <div class="d-flex">
-                                    <label>Entity</label>
-            <select class="form-select form-select-sm" name="" id="entity_slc">
-              
-              <option value="2">2</option>
-              <option value="5" selected>5</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-                            <div class="form-outline">
-                              <input id="TableSearchInput" type="search"   placeholder="search..." class="form-control" />
-                              
-                            </div> 
-                          </div>
+                  <div class="form-outline">
+                    <input id="TableSearchInput" type="search"   placeholder="search..." class="form-control" />
+                    
+                  </div> 
+        </div>
             <button type="button" class="btn   dpanel-btn btn-sm Add_btn"  data-modal="" >ADD USER</button>
         </div>
         <div class="card-body">
@@ -291,12 +264,7 @@ function formModals(){
 
                                   </div>
                                   </div>
-
-
-
-
-
-                                    <div class="col-6">
+                                  <div class="col-6">
 
                                   <div class="mb-2">
                                   <label for="" class="form-label">Category</label>
