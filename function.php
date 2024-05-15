@@ -35,7 +35,7 @@ include "database/conf.php";
         <body>
     <header class="d-flex">
     
-        <a href="#" class="logo"><i class="fas fa-utensils "></i>resto.</a>
+        <a href="#" class="logo"><i class="fas fa-utensils "></i>CodersMarket</a>
     
         <nav class="navbar">
             <a class="active" href="#home">home</a>
@@ -423,14 +423,6 @@ function footers()
                 <a href="#">+90 530 266 86 45</a>
                 <a href="#">eaykose@gmail.com</a>
                 <a href="#">egehan@gmail.com</a>
-            </div>
-    
-            <div class="box">
-                <h3>follow us</h3>
-                <a href="#">facebook</a>
-                <a href="#">twitter</a>
-                <a href="#">instagram</a>
-                <a href="#">linkedin</a>
             </div>
     
         </div>
