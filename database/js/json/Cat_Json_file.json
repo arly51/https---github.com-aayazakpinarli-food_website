@@ -3,7 +3,7 @@
         "id": "1",
         "cat_id": "cat-20001",
         "u_id": "1357678",
-        "cat_name": "burger",
+        "cat_name": "burgers",
         "status": "show"
     },
     {
@@ -53,6 +53,13 @@
         "cat_id": "cat-20008",
         "u_id": "1357678",
         "cat_name": "Biryani",
+        "status": "show"
+    },
+    {
+        "id": "10",
+        "cat_id": "cat-20009",
+        "u_id": "1357678",
+        "cat_name": "n",
         "status": "show"
     }
 ]

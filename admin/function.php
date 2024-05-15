@@ -44,44 +44,8 @@ function ad_headers(){
                                   </li>
                                 </ul>
                               </div>
-                              <!-- left navbar -->
-                              <ul class=" d-flex-center dpanel-nav-right">
-                                  <li class="nav-item search-btn">  <a  ><i class="fas fa-search"></i></a></li>
-                                <li class="dropdown" data-dropdown="#color-gallery">
-                                            <a type="button" class="position-relative">
-                                                    <i class="fas fa-tint"></i>
-                                            <span class="position-absolute top-1  start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
-                                                </a>
-                                                <div class="dropdown-menu" id="color-gallery">';
-                                                $q=$conn->query("SELECT * FROM `colors`  ORDER  by clr_sts ASC") or die("<a>No color found</a>");
-                                                if($q){
-                                                      while($row = mysqli_fetch_assoc($q)){
-                                                      echo  '<a class="dropdown-item color-item '.$row["clr_sts"].' "  data-color-sts = "'.$row["clr_sts"].'" data-color="'.$row["clr"].'"; data-hsl="'.$row["hsl"].'" data-color-alt="'.$row["color_alt"]
-                                                      .'" data-color-lighter="'.$row["color_lighter"].'" data-hsl="'.$row["hsl"].'" style="--clr:'.$row["clr"].';" href="#">
-                                                            </a>';
-                                                }
-                                                } 
-                                                
-                                              echo' </div>
-                              </li>
-                                  <li class="nav-item"><button type="button" class="btn btn-sm txt-clr position-relative">
-                                      <i class="fas fa-envelope"></i>
-                                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                        99+
-                                        
-                                      </span>
-                                    </button>
-                                  </li>
-                                
-                                  <li class="nav-item">
-                                      <a href="" class="nav-link active d-flex">
-                                      
-                                          <img src="img/user1-128x128.jpg" class="userImg" width="30px" height="30px" style="border-radius: 50%;" alt="">
-                                      </a>
-                                      </li>
-                                  <li class="nav-item"><a href="" class="nav-link  active"><i class="fas fa-sign-out-alt"></i></a></li>
-                                          
-                              </ul>
+
+                                  <ul><div><li class="nav-item"><a href="" class="nav-link  active"><i class="fas fa-sign-out-alt"></i></a></li></div></ul>
                   </nav> 
                 </header>
                   <aside class="dpanel-sidebar">
@@ -106,21 +70,10 @@ function ad_headers(){
                           <li class="sidebar-item active">
                               <a href="" class=""><img src="img/user1-128x128.jpg" class="userImg" width="30px" height="30px" style="border-radius: 50%;" alt=""></a>
                               
-                              <span class="userName">ahmer</span>     
+                              <span class="userName"></span>     
                               <span class="btn ms-auto  "> <b class ="fas fa-sign-out-alt"></b></span>
                           </li>
-                          <li class="sidebar-item ">
-                              
-                              <a href="" class=""><i class="fas fa-map-marked"></i></a>
-                              <span class="">dashboard</span>     
-                          </li>
-                          <li class="sidebar-item  cards_box " data-title="Account" data-tbl="moneyHandel.php" data-form-modal="moneyModal">
-                              
-                              <a href="money.php" class=""><i class="fas fa-money-bill "></i>
-                              
-                              </a>
-                              <span class="">Account</span>     
-                          </li>
+                     
                           <li class="sidebar-item dropdown position-relative" data-dropdown="#table">
                               <a href="" class=""><i class="fas fa-table"></i></a>
                               <span class=" dropdown-toggle">Tables</span> 
@@ -190,28 +143,7 @@ function ad_head_content () {
                   <section class="dpanel-body"> 
                   ';
  }        
- function charts_circle (){
-  echo '
-  <!-- cart container -->
-  <div class="chart-container container mb-5">
-      <div class="row">
-          <div class="col-10 offset-1">
-              <div class="grid" id="charts_row">
-                </div>
-          </div>
-      </div>
-  </div>';
-  }
-function   cards (){
-              echo '
-              <!-- card container -->
-              <div class=" card-container container">
-                  <div class="row" id="card_row">
-                           
-                  </div>
-              </div>
-  ';
-}             
+          
 function tables(){
     echo ' <div class="container-fluid">
 

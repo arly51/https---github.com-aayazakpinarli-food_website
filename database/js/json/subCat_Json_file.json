@@ -100,7 +100,15 @@
         "scat_id": "scat-30014",
         "cat_id": "cat-20001",
         "u_id": "1357678",
-        "scat_name": "elk burger",
+        "scat_name": "elk burgers",
+        "status": "show"
+    },
+    {
+        "id": "17",
+        "scat_id": "scat-30015",
+        "cat_id": "cat-20007",
+        "u_id": "1357678",
+        "scat_name": "pepsi",
         "status": "show"
     }
 ]

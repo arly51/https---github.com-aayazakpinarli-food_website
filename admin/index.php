@@ -3,8 +3,6 @@ ad_headers();
 
 ad_head_content();
 search_modal();
-charts_circle();
-cards();
 msgModals();
 tables();
 formModals();
