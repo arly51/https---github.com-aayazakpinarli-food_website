@@ -41,6 +41,9 @@ include "database/conf.php";
             <a class="active" href="#home">home</a>
             <a href="#dishes">dishes</a>
             <a href="#about">about</a>
+            <a href="#menu">menu</a>
+            
+            <a href="#order">order</a>
             <a href="admin/index.php" id="adminLink">Admin Panel</a>
                  </nav>
     
@@ -233,7 +236,7 @@ function introduction()
                     </div>
 
                     <div class="content">
-                        <h3>best food in the country</h3>
+                        <h3>best market in the country</h3>
                         <p>At our market, we are proud to offer you great food that tastes amazing and is always fresh. We work with local farmers and trusted suppliers to make sure you get the best fruits, vegetables, meats, and dairy products.</p>
                         <p>Our food is picked for its quality and flavor, so you can enjoy really good meals every day. When you shop with us you are getting top-notch, fresh food and supporting local producers too. Come visit us for great food that keeps you and your family healthy and happy! </p>
                         <div class="icons-container">
@@ -402,11 +405,11 @@ function footers()
     
             <div class="box">
                 <h3>locations</h3>
-                <a href="#">izmir</a>
-                <a href="#">ankara</a>
-                <a href="#">istanbul</a>
-                <a href="#">eskişehir</a>
-                <a href="#">Bursa</a>
+                <a href="#">bakbakbak</a>
+                <a href="#">japan</a>
+                <a href="#">russia</a>
+                <a href="#">USA</a>
+                <a href="#">france</a>
             </div>
     
             <div class="box">
@@ -456,5 +459,5 @@ function footers()
     
     
     </body>
-    </html>';
+    </html>';
 };
