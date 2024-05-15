@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Mar 02, 2023 at 09:01 AM
--- Server version: 10.5.16-MariaDB
--- PHP Version: 7.3.32
+-- Anamakine: 127.0.0.1
+-- Üretim Zamanı: 15 May 2024, 23:39:35
+-- Sunucu sürümü: 10.4.32-MariaDB
+-- PHP Sürümü: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `id18044649_food_website`
+-- Veritabanı: `epiz_32582462_food_website`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `banner`
+-- Tablo için tablo yapısı `banner`
 --
 
 CREATE TABLE `banner` (
@@ -39,10 +38,10 @@ CREATE TABLE `banner` (
   `b_desc` varchar(200) NOT NULL,
   `b_image` varchar(100) NOT NULL,
   `status` varchar(50) NOT NULL DEFAULT 'show'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `banner`
+-- Tablo döküm verisi `banner`
 --
 
 INSERT INTO `banner` (`id`, `b_id`, `u_id`, `cat_id`, `scat_id`, `b_title`, `b_subtitle`, `b_desc`, `b_image`, `status`) VALUES
@@ -54,7 +53,7 @@ INSERT INTO `banner` (`id`, `b_id`, `u_id`, `cat_id`, `scat_id`, `b_title`, `b_s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `card`
+-- Tablo için tablo yapısı `card`
 --
 
 CREATE TABLE `card` (
@@ -71,10 +70,10 @@ CREATE TABLE `card` (
   `status` varchar(20) NOT NULL,
   `number` varchar(11) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `card`
+-- Tablo döküm verisi `card`
 --
 
 INSERT INTO `card` (`cr_id`, `inv_id`, `cat_id`, `scat_id`, `pro_id`, `u_id`, `qty`, `prize`, `tax`, `date`, `status`, `number`, `address`) VALUES
@@ -110,7 +109,7 @@ INSERT INTO `card` (`cr_id`, `inv_id`, `cat_id`, `scat_id`, `pro_id`, `u_id`, `q
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cash`
+-- Tablo için tablo yapısı `cash`
 --
 
 CREATE TABLE `cash` (
@@ -121,10 +120,10 @@ CREATE TABLE `cash` (
   `profite` decimal(10,0) NOT NULL,
   `extra` decimal(10,0) NOT NULL,
   `date` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `cash`
+-- Tablo döküm verisi `cash`
 --
 
 INSERT INTO `cash` (`id`, `cash-in`, `cash-out`, `invetment`, `profite`, `extra`, `date`) VALUES
@@ -134,7 +133,7 @@ INSERT INTO `cash` (`id`, `cash-in`, `cash-out`, `invetment`, `profite`, `extra`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `catagory`
+-- Tablo için tablo yapısı `catagory`
 --
 
 CREATE TABLE `catagory` (
@@ -143,10 +142,10 @@ CREATE TABLE `catagory` (
   `u_id` varchar(50) NOT NULL,
   `cat_name` varchar(20) NOT NULL,
   `status` varchar(20) NOT NULL DEFAULT 'show'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `catagory`
+-- Tablo döküm verisi `catagory`
 --
 
 INSERT INTO `catagory` (`id`, `cat_id`, `u_id`, `cat_name`, `status`) VALUES
@@ -163,7 +162,7 @@ INSERT INTO `catagory` (`id`, `cat_id`, `u_id`, `cat_name`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `colors`
+-- Tablo için tablo yapısı `colors`
 --
 
 CREATE TABLE `colors` (
@@ -173,10 +172,10 @@ CREATE TABLE `colors` (
   `color_alt` varchar(50) NOT NULL,
   `color_lighter` varchar(50) NOT NULL,
   `clr_sts` varchar(50) NOT NULL DEFAULT 'white'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `colors`
+-- Tablo döküm verisi `colors`
 --
 
 INSERT INTO `colors` (`clr_id`, `hsl`, `clr`, `color_alt`, `color_lighter`, `clr_sts`) VALUES
@@ -188,7 +187,7 @@ INSERT INTO `colors` (`clr_id`, `hsl`, `clr`, `color_alt`, `color_lighter`, `clr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- Tablo için tablo yapısı `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -197,10 +196,10 @@ CREATE TABLE `feedback` (
   `inv_id` varchar(50) NOT NULL,
   `msg` varchar(150) NOT NULL,
   `date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `feedback`
+-- Tablo döküm verisi `feedback`
 --
 
 INSERT INTO `feedback` (`f_id`, `user_id`, `inv_id`, `msg`, `date`) VALUES
@@ -212,7 +211,7 @@ INSERT INTO `feedback` (`f_id`, `user_id`, `inv_id`, `msg`, `date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Tablo için tablo yapısı `product`
 --
 
 CREATE TABLE `product` (
@@ -229,29 +228,29 @@ CREATE TABLE `product` (
   `status` varchar(20) NOT NULL DEFAULT 'show',
   `action` varchar(10) NOT NULL DEFAULT 'far',
   `date` datetime(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `product`
+-- Tablo döküm verisi `product`
 --
 
 INSERT INTO `product` (`id`, `p_id`, `cat_id`, `scat_id`, `u_id`, `p_title`, `p_subtitle`, `p_desc`, `p_prize`, `p_image`, `status`, `action`, `date`) VALUES
 (1, 'p-10001', 'cat-20001', 'scat-30001', '1357678', 'Milk', 'Milk', 'Essential for its nutritional value and versatility in dairy products. ', 30, 'milk.png', 'show', 'far', '2023-02-20 17:46:03.000000'),
-(2, 'p-10002', 'cat-20004', 'scat-30003', '1357678', 'Cheese', 'Cheese', 'Major product in the global dairy market, valued for its diverse varieties and culinary uses.', 50, 'cheese.png', 'show', 'far', '2023-02-21 17:46:03.000000'),
+(2, 'p-10002', 'cat-20004', 'scat-30003', '1357678', 'Cheese', 'Cheese', 'major product in the global dairy market, valued for its diverse varieties and culinary uses.', 50, 'cheese.png', 'show', 'far', '2023-02-21 17:46:03.000000'),
 (3, 'p-10003', 'cat-20003', 'scat-30011', '1357678', 'Yoghurt', 'Yoghurt', 'Yogurt is a significant product in the global dairy market, appreciated for its health benefits and versatility', 55, 'yoghurt.png', 'show', 'far', '2023-03-01 20:14:29.000000'),
 (4, 'p-10004', 'cat-20004', 'scat-30013', '1357678', 'Ice cream', 'Ice cream', 'Ice cream is a popular product in the global dairy market, known for its wide variety of flavors and widespread appeal', 25, 'icecream.png', 'show', 'far', '2023-02-22 17:46:03.000000'),
 (5, 'p-10005', 'cat-20005', 'scat-30004', '1357678', 'Rice', 'Rice', 'Rice is a staple food in the global market, essential for its versatility and nutritional value. ', 17, 'rice.png', 'hide', 'far', '2023-02-23 17:46:03.000000'),
 (6, 'p-10006', 'cat-20001', 'scat-30014', '1357678', 'Shampoo', 'Shampoo', 'N/A', 100, 'shampoo.png', 'show', 'far', '2023-02-23 17:46:03.000000'),
 (13, 'p-10008', 'cat-20008', 'scat-30012', '1357678', 'Pepper', 'Pepper', 'Pepper, including black, white, and green types, is a key global spice produced.', 10, 'pepper.png', 'show', 'far', '2023-02-24 17:46:03.000000'),
 (14, 'p-10009', 'cat-20001', 'scat-30009', '1357678', 'Tomato', 'Tomato', 'Tomatoes are a staple in our market, widely used in cooking and food processing. ', 7, 'tomato.png', 'show', 'far', '2023-02-25 17:46:03.000000'),
-(17, 'p-10010', 'cat-20005', 'scat-30010', '1357678', 'Mango', 'Mango ', ' Mangoes are a popular tropical fruit in our market, known for their sweet taste and nutritional benefits.', 20, 'mangoe.png', 'show', 'far', '2023-02-26 17:46:03.000000'),
-(18, 'p-10011', 'cat-20007', 'scat-30015', '1357678', 'Avocado', 'Avocado', 'Avocados are a highly valued fruit in the global market, celebrated for their rich taste and health benefits. ', 20, 'avocado', 'show', 'far', '2023-02-28 17:46:03.000000'),
+(17, 'p-10010', 'cat-20005', 'scat-30010', '1357678', 'Mango', 'Mango', 'Mangoes are a popular tropical fruit in our market, known for their sweet taste and nutritional benefits.', 20, 'mangoe.png', 'show', 'far', '2023-02-26 17:46:03.000000'),
+(18, 'p-10011', 'cat-20007', 'scat-30015', '1357678', 'avocado', 'Avocado', 'Avocados are a highly valued fruit in the global market, celebrated for their rich taste and health benefits. ', 20, 'avocado.png', 'show', 'far', '2023-02-28 17:46:03.000000'),
 (19, 'p-10012', 'cat-20002', 'scat-30005', '1357678', 'Spinach', 'Spinach', 'Spinach is a widely consumed leafy green vegetable in the global market, valued for its nutritional benefits and versatility in cooking. ', 8, 'spinach.png', 'show', 'far', '2023-03-01 20:15:34.000000');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pro_stock`
+-- Tablo için tablo yapısı `pro_stock`
 --
 
 CREATE TABLE `pro_stock` (
@@ -266,10 +265,10 @@ CREATE TABLE `pro_stock` (
   `tax` int(10) NOT NULL DEFAULT 3,
   `date` varchar(50) NOT NULL,
   `status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `pro_stock`
+-- Tablo döküm verisi `pro_stock`
 --
 
 INSERT INTO `pro_stock` (`pp_id`, `ps_id`, `cat_id`, `scat_id`, `pro_id`, `u_id`, `qty`, `prize`, `tax`, `date`, `status`) VALUES
@@ -282,7 +281,7 @@ INSERT INTO `pro_stock` (`pp_id`, `ps_id`, `cat_id`, `scat_id`, `pro_id`, `u_id`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `register`
+-- Tablo için tablo yapısı `register`
 --
 
 CREATE TABLE `register` (
@@ -296,10 +295,10 @@ CREATE TABLE `register` (
   `role_id` int(11) NOT NULL DEFAULT 2,
   `address` varchar(100) NOT NULL DEFAULT 'karachi',
   `number` varchar(14) NOT NULL DEFAULT 'N/A'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `register`
+-- Tablo döküm verisi `register`
 --
 
 INSERT INTO `register` (`u_id`, `unique_id`, `Name`, `email`, `password`, `image`, `status`, `role_id`, `address`, `number`) VALUES
@@ -332,16 +331,16 @@ INSERT INTO `register` (`u_id`, `unique_id`, `Name`, `email`, `password`, `image
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role`
+-- Tablo için tablo yapısı `role`
 --
 
 CREATE TABLE `role` (
   `role_id` int(11) NOT NULL,
   `role_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `role`
+-- Tablo döküm verisi `role`
 --
 
 INSERT INTO `role` (`role_id`, `role_name`) VALUES
@@ -351,7 +350,7 @@ INSERT INTO `role` (`role_id`, `role_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sub_category`
+-- Tablo için tablo yapısı `sub_category`
 --
 
 CREATE TABLE `sub_category` (
@@ -361,10 +360,10 @@ CREATE TABLE `sub_category` (
   `u_id` varchar(50) NOT NULL,
   `scat_name` varchar(50) NOT NULL,
   `status` varchar(50) NOT NULL DEFAULT 'show'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `sub_category`
+-- Tablo döküm verisi `sub_category`
 --
 
 INSERT INTO `sub_category` (`id`, `scat_id`, `cat_id`, `u_id`, `scat_name`, `status`) VALUES
@@ -384,141 +383,141 @@ INSERT INTO `sub_category` (`id`, `scat_id`, `cat_id`, `u_id`, `scat_name`, `sta
 (17, 'scat-30015', 'cat-20007', '1357678', 'pepsi', 'show');
 
 --
--- Indexes for dumped tables
+-- Dökümü yapılmış tablolar için indeksler
 --
 
 --
--- Indexes for table `banner`
+-- Tablo için indeksler `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `card`
+-- Tablo için indeksler `card`
 --
 ALTER TABLE `card`
   ADD PRIMARY KEY (`cr_id`);
 
 --
--- Indexes for table `cash`
+-- Tablo için indeksler `cash`
 --
 ALTER TABLE `cash`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `catagory`
+-- Tablo için indeksler `catagory`
 --
 ALTER TABLE `catagory`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `colors`
+-- Tablo için indeksler `colors`
 --
 ALTER TABLE `colors`
   ADD PRIMARY KEY (`clr_id`);
 
 --
--- Indexes for table `feedback`
+-- Tablo için indeksler `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`f_id`);
 
 --
--- Indexes for table `product`
+-- Tablo için indeksler `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pro_stock`
+-- Tablo için indeksler `pro_stock`
 --
 ALTER TABLE `pro_stock`
   ADD PRIMARY KEY (`pp_id`);
 
 --
--- Indexes for table `register`
+-- Tablo için indeksler `register`
 --
 ALTER TABLE `register`
   ADD PRIMARY KEY (`u_id`);
 
 --
--- Indexes for table `role`
+-- Tablo için indeksler `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`role_id`);
 
 --
--- Indexes for table `sub_category`
+-- Tablo için indeksler `sub_category`
 --
 ALTER TABLE `sub_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
 --
 
 --
--- AUTO_INCREMENT for table `banner`
+-- Tablo için AUTO_INCREMENT değeri `banner`
 --
 ALTER TABLE `banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `card`
+-- Tablo için AUTO_INCREMENT değeri `card`
 --
 ALTER TABLE `card`
   MODIFY `cr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
--- AUTO_INCREMENT for table `cash`
+-- Tablo için AUTO_INCREMENT değeri `cash`
 --
 ALTER TABLE `cash`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `catagory`
+-- Tablo için AUTO_INCREMENT değeri `catagory`
 --
 ALTER TABLE `catagory`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `colors`
+-- Tablo için AUTO_INCREMENT değeri `colors`
 --
 ALTER TABLE `colors`
   MODIFY `clr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `feedback`
+-- Tablo için AUTO_INCREMENT değeri `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `f_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `product`
+-- Tablo için AUTO_INCREMENT değeri `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `pro_stock`
+-- Tablo için AUTO_INCREMENT değeri `pro_stock`
 --
 ALTER TABLE `pro_stock`
   MODIFY `pp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `register`
+-- Tablo için AUTO_INCREMENT değeri `register`
 --
 ALTER TABLE `register`
   MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
--- AUTO_INCREMENT for table `role`
+-- Tablo için AUTO_INCREMENT değeri `role`
 --
 ALTER TABLE `role`
   MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `sub_category`
+-- Tablo için AUTO_INCREMENT değeri `sub_category`
 --
 ALTER TABLE `sub_category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
