@@ -203,8 +203,8 @@ function dishes()
     
     <section class="dishes" id="dishes">
     <div class="title-head">
-        <h3 class="sub-heading"> our dishes </h3>
-        <h1 class="heading"> popular dishes </h1>
+        <h3 class="sub-heading"> our products </h3>
+        <h1 class="heading"> popular products </h1>
         </div>
     
         <div  id="p_msg"></div>
