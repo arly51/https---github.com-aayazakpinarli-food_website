@@ -242,11 +242,11 @@ INSERT INTO `product` (`id`, `p_id`, `cat_id`, `scat_id`, `u_id`, `p_title`, `p_
 (4, 'p-10004', 'cat-20004', 'scat-30013', '1357678', 'legs roster', 'larger roster', '  this is roster', 160, 'dish-6.png', 'show', 'far', '2023-02-22 17:46:03.000000'),
 (5, 'p-10005', 'cat-20005', 'scat-30004', '1357678', 'black ice cream', 'so Delicious', '   ice cream is nice', 150, 'dish-5.png', 'hide', 'far', '2023-02-23 17:46:03.000000'),
 (6, 'p-10006', 'cat-20001', 'scat-30014', '1357678', 'ELK burger', 'Lean, delicious ', '   Lean, delicious and free-range , Awesome In Rang , Elk Burger is Spicy', 360, 'dish-7.png', 'show', 'far', '2023-02-23 17:46:03.000000'),
-(13, 'p-10008', 'cat-20008', 'scat-30012', '1357678', 'Hyderabadi biryani', 'fried chicken', '   Hyderabadi chicken biryani is an aromatic, mouth watering and authentic Indian dish with succulent chicken in layers of fluffy rice, fragrant spice', 250, 'chicken.png', 'show', 'far', '2023-02-24 17:46:03.000000'),
-(14, 'p-10009', 'cat-20001', 'scat-30009', '1357678', 'cheez burger', 'Extra spicy and hot', '  hello guys, new offer of cheezz burger', 190, 'dish-7.png', 'show', 'far', '2023-02-25 17:46:03.000000'),
-(17, 'p-10010', 'cat-20005', 'scat-30010', '1357678', 'Mango Ice', 'Sweet & ice ', ' 125kcal', 250, 'dish-8.jpg', 'show', 'far', '2023-02-26 17:46:03.000000'),
-(18, 'p-10011', 'cat-20007', 'scat-30015', '1357678', 'pepsi', 'All brand available.', ' N/A', 200, 'pngegg.png', 'show', 'far', '2023-02-28 17:46:03.000000'),
-(19, 'p-10012', 'cat-20002', 'scat-30005', '1357678', 'Spicy chicken ', 'world famous dishes', '  N/A', 1100, 'chicken.png', 'show', 'far', '2023-03-01 20:15:34.000000');
+(13, 'p-10008', 'cat-20008', 'scat-30012', '1357678', 'Pepper', 'Pepper', 'Pepper, including black, white, and green types, is a key global spice produced.', 250, 'pepper.png', 'show', 'far', '2023-02-24 17:46:03.000000'),
+(14, 'p-10009', 'cat-20001', 'scat-30009', '1357678', 'Tomato', 'Tomato', 'Tomatoes are a staple in our market, widely used in cooking and food processing. ', 190, 'tomato.png', 'show', 'far', '2023-02-25 17:46:03.000000'),
+(17, 'p-10010', 'cat-20005', 'scat-30010', '1357678', 'Mango', 'Mango ', ' Mangoes are a popular tropical fruit in our market, known for their sweet taste and nutritional benefits.', 250, 'mangoe.png', 'show', 'far', '2023-02-26 17:46:03.000000'),
+(18, 'p-10011', 'cat-20007', 'scat-30015', '1357678', 'Avocado', 'Avocado', 'Avocados are a highly valued fruit in the global market, celebrated for their rich taste and health benefits. ', 200, 'avocado', 'show', 'far', '2023-02-28 17:46:03.000000'),
+(19, 'p-10012', 'cat-20002', 'scat-30005', '1357678', 'Spinach', 'Spinach', 'Spinach is a widely consumed leafy green vegetable in the global market, valued for its nutritional benefits and versatility in cooking. ', 1100, 'spinach.png', 'show', 'far', '2023-03-01 20:15:34.000000');
 
 -- --------------------------------------------------------
 
