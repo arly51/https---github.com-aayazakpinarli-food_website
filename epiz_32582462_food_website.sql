@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Anamakine: 127.0.0.1
--- Üretim Zamanı: 16 May 2024, 12:19:39
--- Sunucu sürümü: 10.4.32-MariaDB
--- PHP Sürümü: 8.0.30
+-- Anamakine: 127.0.0.1:3306
+-- Üretim Zamanı: 16 May 2024, 17:43:54
+-- Sunucu sürümü: 8.2.0
+-- PHP Sürümü: 8.2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,18 +27,20 @@ SET time_zone = "+00:00";
 -- Tablo için tablo yapısı `banner`
 --
 
-CREATE TABLE `banner` (
-  `id` int(11) NOT NULL,
-  `b_id` varchar(50) NOT NULL,
-  `u_id` varchar(50) NOT NULL,
-  `cat_id` varchar(50) NOT NULL,
-  `scat_id` varchar(50) NOT NULL,
-  `b_title` varchar(100) NOT NULL,
-  `b_subtitle` varchar(100) NOT NULL,
-  `b_desc` varchar(200) NOT NULL,
-  `b_image` varchar(100) NOT NULL,
-  `status` varchar(50) NOT NULL DEFAULT 'show'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+DROP TABLE IF EXISTS `banner`;
+CREATE TABLE IF NOT EXISTS `banner` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `b_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `u_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `cat_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `scat_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `b_title` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `b_subtitle` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `b_desc` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `b_image` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `status` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'show',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Tablo döküm verisi `banner`
@@ -49,14 +51,16 @@ INSERT INTO `banner` (`id`, `b_id`, `u_id`, `cat_id`, `scat_id`, `b_title`, `b_s
 (5, 'b-80002', '1357678', 'cat-20003', 'scat-30011', 'spicy pizza', 'hot & spicy dishes', ' a flat, open-faced baked pie of Italian origin, consisting of a thin layer of bread dough topped wit', 'home-img-3.png', 'show'),
 (6, 'b-80003', '1357678', 'cat-20002', 'scat-30005', 'spicy chicken', 'world famous dishes', '  Delicious chicken recipes from the pakistan best chefs including roast chicken', 'home-img-2.png', 'hide'),
 (7, 'b-80004', '1357678', 'cat-20008', 'scat-30012', 'hyderbadi biryani', 'very tasty and spicy', 'N/A', 'home-img-4.png', 'show');
+
 -- --------------------------------------------------------
 
 --
 -- Tablo için tablo yapısı `card`
 --
 
-CREATE TABLE `card` (
-  `cr_id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `card`;
+CREATE TABLE IF NOT EXISTS `card` (
+  `cr_id` int NOT NULL AUTO_INCREMENT,
   `inv_id` varchar(50) NOT NULL,
   `cat_id` varchar(50) NOT NULL,
   `scat_id` varchar(50) NOT NULL,
@@ -64,12 +68,13 @@ CREATE TABLE `card` (
   `u_id` varchar(50) NOT NULL,
   `qty` decimal(10,0) NOT NULL,
   `prize` decimal(10,0) NOT NULL,
-  `tax` int(10) NOT NULL DEFAULT 3,
+  `tax` int NOT NULL DEFAULT '3',
   `date` varchar(50) NOT NULL,
   `status` varchar(20) NOT NULL,
   `number` varchar(11) DEFAULT NULL,
-  `address` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `address` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`cr_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `card`
@@ -111,15 +116,17 @@ INSERT INTO `card` (`cr_id`, `inv_id`, `cat_id`, `scat_id`, `pro_id`, `u_id`, `q
 -- Tablo için tablo yapısı `cash`
 --
 
-CREATE TABLE `cash` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `cash`;
+CREATE TABLE IF NOT EXISTS `cash` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `cash-in` decimal(10,0) NOT NULL,
   `cash-out` decimal(10,0) NOT NULL,
   `invetment` decimal(10,0) NOT NULL,
   `profite` decimal(10,0) NOT NULL,
   `extra` decimal(10,0) NOT NULL,
-  `date` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `date` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Tablo döküm verisi `cash`
@@ -135,13 +142,15 @@ INSERT INTO `cash` (`id`, `cash-in`, `cash-out`, `invetment`, `profite`, `extra`
 -- Tablo için tablo yapısı `catagory`
 --
 
-CREATE TABLE `catagory` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `catagory`;
+CREATE TABLE IF NOT EXISTS `catagory` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `cat_id` varchar(50) NOT NULL,
   `u_id` varchar(50) NOT NULL,
   `cat_name` varchar(20) NOT NULL,
-  `status` varchar(20) NOT NULL DEFAULT 'show'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `status` varchar(20) NOT NULL DEFAULT 'show',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `catagory`
@@ -164,14 +173,16 @@ INSERT INTO `catagory` (`id`, `cat_id`, `u_id`, `cat_name`, `status`) VALUES
 -- Tablo için tablo yapısı `colors`
 --
 
-CREATE TABLE `colors` (
-  `clr_id` int(11) NOT NULL,
-  `hsl` varchar(50) NOT NULL,
-  `clr` varchar(50) NOT NULL,
-  `color_alt` varchar(50) NOT NULL,
-  `color_lighter` varchar(50) NOT NULL,
-  `clr_sts` varchar(50) NOT NULL DEFAULT 'white'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+DROP TABLE IF EXISTS `colors`;
+CREATE TABLE IF NOT EXISTS `colors` (
+  `clr_id` int NOT NULL AUTO_INCREMENT,
+  `hsl` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `clr` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `color_alt` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `color_lighter` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `clr_sts` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'white',
+  PRIMARY KEY (`clr_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Tablo döküm verisi `colors`
@@ -189,13 +200,15 @@ INSERT INTO `colors` (`clr_id`, `hsl`, `clr`, `color_alt`, `color_lighter`, `clr
 -- Tablo için tablo yapısı `feedback`
 --
 
-CREATE TABLE `feedback` (
-  `f_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `inv_id` varchar(50) NOT NULL,
-  `msg` varchar(150) NOT NULL,
-  `date` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+DROP TABLE IF EXISTS `feedback`;
+CREATE TABLE IF NOT EXISTS `feedback` (
+  `f_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL,
+  `inv_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `msg` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`f_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Tablo döküm verisi `feedback`
@@ -213,8 +226,9 @@ INSERT INTO `feedback` (`f_id`, `user_id`, `inv_id`, `msg`, `date`) VALUES
 -- Tablo için tablo yapısı `product`
 --
 
-CREATE TABLE `product` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `product`;
+CREATE TABLE IF NOT EXISTS `product` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `p_id` varchar(50) NOT NULL,
   `cat_id` varchar(50) NOT NULL,
   `scat_id` varchar(50) NOT NULL,
@@ -226,8 +240,9 @@ CREATE TABLE `product` (
   `p_image` varchar(50) NOT NULL,
   `status` varchar(20) NOT NULL DEFAULT 'show',
   `action` varchar(10) NOT NULL DEFAULT 'far',
-  `date` datetime(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `date` datetime(6) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `product`
@@ -252,19 +267,21 @@ INSERT INTO `product` (`id`, `p_id`, `cat_id`, `scat_id`, `u_id`, `p_title`, `p_
 -- Tablo için tablo yapısı `pro_stock`
 --
 
-CREATE TABLE `pro_stock` (
-  `pp_id` int(11) NOT NULL,
-  `ps_id` varchar(50) NOT NULL,
-  `cat_id` varchar(50) NOT NULL,
-  `scat_id` varchar(50) NOT NULL,
-  `pro_id` varchar(50) NOT NULL,
-  `u_id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `pro_stock`;
+CREATE TABLE IF NOT EXISTS `pro_stock` (
+  `pp_id` int NOT NULL AUTO_INCREMENT,
+  `ps_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `cat_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `scat_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `pro_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `u_id` int NOT NULL,
   `qty` decimal(10,0) NOT NULL,
   `prize` decimal(10,0) NOT NULL,
-  `tax` int(10) NOT NULL DEFAULT 3,
-  `date` varchar(50) NOT NULL,
-  `status` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `tax` int NOT NULL DEFAULT '3',
+  `date` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `status` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`pp_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Tablo döküm verisi `pro_stock`
@@ -283,49 +300,53 @@ INSERT INTO `pro_stock` (`pp_id`, `ps_id`, `cat_id`, `scat_id`, `pro_id`, `u_id`
 -- Tablo için tablo yapısı `register`
 --
 
-CREATE TABLE `register` (
-  `u_id` int(11) NOT NULL,
-  `unique_id` int(20) NOT NULL,
+DROP TABLE IF EXISTS `register`;
+CREATE TABLE IF NOT EXISTS `register` (
+  `u_id` int NOT NULL AUTO_INCREMENT,
+  `unique_id` int NOT NULL,
   `Name` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(50) NOT NULL,
   `image` varchar(60) NOT NULL,
   `status` varchar(60) NOT NULL,
-  `role_id` int(11) NOT NULL DEFAULT 2,
+  `role_id` int NOT NULL DEFAULT '2',
   `address` varchar(100) NOT NULL DEFAULT 'karachi',
-  `number` varchar(14) NOT NULL DEFAULT 'N/A'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `number` varchar(14) NOT NULL DEFAULT 'N/A',
+  `city` varchar(15) NOT NULL,
+  `district` varchar(15) NOT NULL,
+  PRIMARY KEY (`u_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `register`
 --
 
-INSERT INTO `register` (`u_id`, `unique_id`, `Name`, `email`, `password`, `image`, `status`, `role_id`, `address`, `number`) VALUES
-(2, 1357678, 'ahmer ali', 'ahmer@gmail.com', '123', '1677523302uesr.jpg', 'signal_cellular_null', 1, 'karachi', 'N/A'),
-(3, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A'),
-(13, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A'),
-(16, 1117230790, 'rehman', 'rehman@gmail.com', '0000', '1663767978Koala.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(18, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A'),
-(28, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A'),
-(29, 97668943, 'aliysha', 'aliysha@hr.com', '123', '1677583448Thinking-Woman-PNG.png', 'signal_cellular_4_bar', 2, 'karachi', 'N/A'),
-(33, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A'),
-(36, 1117230790, 'Abdul Rehman 003', 'rehman@gmail.com', '0000', '1676055615pic-4.png', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(38, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A'),
-(39, 97668943, 'aliysha', 'aliysha@gmail.com', '123', '1663620232face11.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A'),
-(41, 1117230790, 'rehman', 'rehman@gmail.com', '0000', '1663767978Koala.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(42, 514652895, 'Dawood', 'Dawood@user.in', '123', 'pic.png', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(43, 87139959, 'Muslim ', 'Muslim@user.in', '123', '1675247857pic.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(44, 728356719, 'abdul Rehman', 'rehman@test.in', '123', '1675248388admin.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(47, 1357678, 'Imran Ali', 'Imran.Ali@fooddelever.com', '123', '1675417255pic.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(48, 1357678, 'Imran Ali', 'Imran.Ali@fooddelever.com', '123', '1675417425pic.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(49, 1357678, 'Imran Ali', 'Imran.Ali@fooddelever.com', '123', '16754175051675417425pic.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(50, 1133030496, 'samuel Yaqoob', 'samuel@gmail.com', '123', '167542006216754175051675417425pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A'),
-(51, 267757519, 'samuel Yaqoob', 'samuel855@gmail.com', '123', '1676112226pic-1.png', 'signal_cellular_4_bar', 1, 'karachi', 'N/A'),
-(52, 1117230790, 'Abdul Rehman', 'Abdulrehman@foodCeo.com', '0000', '1675421206admin.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(53, 676373578, 'umer akber', 'umerAkber@gmail.com', '123', '16755359111675420102pic.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(54, 1584050050, 'Junaid Rehman', 'junaidRehman@worker.in', '123', '1676111192pic-3.png', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(56, 1102389833, 'javeed iqbal', 'javedIgbal@gmal.com', '123', '1677596306Thinking-Woman-PNG.png', 'signal_cellular_null', 2, 'karachi', 'N/A'),
-(57, 317669658, 'Mahroosh  asad', 'mahroosh@hr.com', '123', '1677691780Thinking-Woman-PNG.png', 'signal_cellular_null', 2, 'karachi', 'N/A');
+INSERT INTO `register` (`u_id`, `unique_id`, `Name`, `email`, `password`, `image`, `status`, `role_id`, `address`, `number`, `city`, `district`) VALUES
+(2, 1357678, 'ahmer ali', 'ahmer@gmail.com', '123', '1677523302uesr.jpg', 'signal_cellular_null', 1, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(3, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(13, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(16, 1117230790, 'rehman', 'rehman@gmail.com', '0000', '1663767978Koala.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(18, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(28, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(29, 97668943, 'aliysha', 'aliysha@hr.com', '123', '1677583448Thinking-Woman-PNG.png', 'signal_cellular_4_bar', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(33, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(36, 1117230790, 'Abdul Rehman 003', 'rehman@gmail.com', '0000', '1676055615pic-4.png', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(38, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(39, 97668943, 'aliysha', 'aliysha@gmail.com', '123', '1663620232face11.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(41, 1117230790, 'rehman', 'rehman@gmail.com', '0000', '1663767978Koala.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(42, 514652895, 'Dawood', 'Dawood@user.in', '123', 'pic.png', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(43, 87139959, 'Muslim ', 'Muslim@user.in', '123', '1675247857pic.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(44, 728356719, 'abdul Rehman', 'rehman@test.in', '123', '1675248388admin.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(47, 1357678, 'Imran Ali', 'Imran.Ali@fooddelever.com', '123', '1675417255pic.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(48, 1357678, 'Imran Ali', 'Imran.Ali@fooddelever.com', '123', '1675417425pic.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(49, 1357678, 'Imran Ali', 'Imran.Ali@fooddelever.com', '123', '16754175051675417425pic.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(50, 1133030496, 'samuel Yaqoob', 'samuel@gmail.com', '123', '167542006216754175051675417425pic.jpg', 'signal_cellular_4_bar', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(51, 267757519, 'samuel Yaqoob', 'samuel855@gmail.com', '123', '1676112226pic-1.png', 'signal_cellular_4_bar', 1, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(52, 1117230790, 'Abdul Rehman', 'Abdulrehman@foodCeo.com', '0000', '1675421206admin.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(53, 676373578, 'umer akber', 'umerAkber@gmail.com', '123', '16755359111675420102pic.jpg', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(54, 1584050050, 'Junaid Rehman', 'junaidRehman@worker.in', '123', '1676111192pic-3.png', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(56, 1102389833, 'javeed iqbal', 'javedIgbal@gmal.com', '123', '1677596306Thinking-Woman-PNG.png', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya'),
+(57, 317669658, 'Mahroosh  asad', 'mahroosh@hr.com', '123', '1677691780Thinking-Woman-PNG.png', 'signal_cellular_null', 2, 'karachi', 'N/A', 'Ankara', 'Cankaya');
 
 -- --------------------------------------------------------
 
@@ -333,10 +354,12 @@ INSERT INTO `register` (`u_id`, `unique_id`, `Name`, `email`, `password`, `image
 -- Tablo için tablo yapısı `role`
 --
 
-CREATE TABLE `role` (
-  `role_id` int(11) NOT NULL,
-  `role_name` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+DROP TABLE IF EXISTS `role`;
+CREATE TABLE IF NOT EXISTS `role` (
+  `role_id` int NOT NULL AUTO_INCREMENT,
+  `role_name` varchar(20) NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `role`
@@ -352,14 +375,16 @@ INSERT INTO `role` (`role_id`, `role_name`) VALUES
 -- Tablo için tablo yapısı `sub_category`
 --
 
-CREATE TABLE `sub_category` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `sub_category`;
+CREATE TABLE IF NOT EXISTS `sub_category` (
+  `id` int NOT NULL AUTO_INCREMENT,
   `scat_id` varchar(50) NOT NULL,
   `cat_id` varchar(50) NOT NULL,
   `u_id` varchar(50) NOT NULL,
   `scat_name` varchar(50) NOT NULL,
-  `status` varchar(50) NOT NULL DEFAULT 'show'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+  `status` varchar(50) NOT NULL DEFAULT 'show',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `sub_category`
@@ -380,146 +405,6 @@ INSERT INTO `sub_category` (`id`, `scat_id`, `cat_id`, `u_id`, `scat_name`, `sta
 (15, 'scat-30013', 'cat-20004', '1357678', 'leg roster', 'show'),
 (16, 'scat-30014', 'cat-20001', '1357678', 'elk burgers', 'show'),
 (17, 'scat-30015', 'cat-20007', '1357678', 'pepsi', 'show');
-
---
--- Dökümü yapılmış tablolar için indeksler
---
-
---
--- Tablo için indeksler `banner`
---
-ALTER TABLE `banner`
-  ADD PRIMARY KEY (`id`);
-
---
--- Tablo için indeksler `card`
---
-ALTER TABLE `card`
-  ADD PRIMARY KEY (`cr_id`);
-
---
--- Tablo için indeksler `cash`
---
-ALTER TABLE `cash`
-  ADD PRIMARY KEY (`id`);
-
---
--- Tablo için indeksler `catagory`
---
-ALTER TABLE `catagory`
-  ADD PRIMARY KEY (`id`);
-
---
--- Tablo için indeksler `colors`
---
-ALTER TABLE `colors`
-  ADD PRIMARY KEY (`clr_id`);
-
---
--- Tablo için indeksler `feedback`
---
-ALTER TABLE `feedback`
-  ADD PRIMARY KEY (`f_id`);
-
---
--- Tablo için indeksler `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`id`);
-
---
--- Tablo için indeksler `pro_stock`
---
-ALTER TABLE `pro_stock`
-  ADD PRIMARY KEY (`pp_id`);
-
---
--- Tablo için indeksler `register`
---
-ALTER TABLE `register`
-  ADD PRIMARY KEY (`u_id`);
-
---
--- Tablo için indeksler `role`
---
-ALTER TABLE `role`
-  ADD PRIMARY KEY (`role_id`);
-
---
--- Tablo için indeksler `sub_category`
---
-ALTER TABLE `sub_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
---
-
---
--- Tablo için AUTO_INCREMENT değeri `banner`
---
-ALTER TABLE `banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- Tablo için AUTO_INCREMENT değeri `card`
---
-ALTER TABLE `card`
-  MODIFY `cr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
-
---
--- Tablo için AUTO_INCREMENT değeri `cash`
---
-ALTER TABLE `cash`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Tablo için AUTO_INCREMENT değeri `catagory`
---
-ALTER TABLE `catagory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- Tablo için AUTO_INCREMENT değeri `colors`
---
-ALTER TABLE `colors`
-  MODIFY `clr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Tablo için AUTO_INCREMENT değeri `feedback`
---
-ALTER TABLE `feedback`
-  MODIFY `f_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- Tablo için AUTO_INCREMENT değeri `product`
---
-ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- Tablo için AUTO_INCREMENT değeri `pro_stock`
---
-ALTER TABLE `pro_stock`
-  MODIFY `pp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Tablo için AUTO_INCREMENT değeri `register`
---
-ALTER TABLE `register`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
-
---
--- Tablo için AUTO_INCREMENT değeri `role`
---
-ALTER TABLE `role`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Tablo için AUTO_INCREMENT değeri `sub_category`
---
-ALTER TABLE `sub_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
