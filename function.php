@@ -230,7 +230,7 @@ function introduction()
                 <div class="row">
 
                     <div class="image">
-                        <img src="images/about-img.png" alt="">
+                        <img src="images/codingm.png" alt="">
                     </div>
 
                     <div class="content">
@@ -403,11 +403,11 @@ function footers()
     
             <div class="box">
                 <h3>locations</h3>
-                <a href="#">bakbakbak</a>
-                <a href="#">japan</a>
-                <a href="#">russia</a>
-                <a href="#">USA</a>
-                <a href="#">france</a>
+                <a href="#">Ankara</a>
+                <a href="#">İstanbul</a>
+                <a href="#">İzmir</a>
+                <a href="#">Eskişehir</a>
+                <a href="#">Bursa</a>
             </div>
     
             <div class="box">
