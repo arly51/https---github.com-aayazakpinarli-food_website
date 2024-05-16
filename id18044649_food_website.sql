@@ -45,11 +45,10 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `b_id`, `u_id`, `cat_id`, `scat_id`, `b_title`, `b_subtitle`, `b_desc`, `b_image`, `status`) VALUES
-(4, 'b-80001', '1357678', 'cat-20006', 'scat-30006', 'Discount', 'For the first order', 'Are you ready to experience the best? For a limited time, we are giving you an incredible $100 discount on your first order! Whether you are shopping for the latest gadgets, stylish apparel, or home ess', 'coupon.png', 'show'),
-(5, 'b-80002', '1357678', 'cat-20003', 'scat-30011', 'Discount on Olive Oils for today!', 'Best Olive Oils', 'For a limited time, indulge in the rich flavors and health benefits of our premium olive oils with an exclusive discount. Elevate your cooking and enjoy the best nature has to offer.Use Code: OLIVE20 ', 'oil.png', 'show'),
-(6, 'b-80003', '1357678', 'cat-20002', 'scat-30005', 'Sleepy Wet Wipes', 'Sleepy Wet Wipes', 'For a limited time, enjoy a special gift with your shopping! For every $50 you spend, receive a pack of premium wet wipes absolutely free. Perfect for keeping clean and refreshed on the go.', 'wetwipe.png', 'hide'),
-(7, 'b-80004', '1357678', 'cat-20008', 'scat-30012', 'Neutrogena Hydro Boost', 'Neutrogena Hydro Boost on Discount!!', 'Today only, experience the ultimate hydration with Neutrogena Hydro Boost for just $10! Dont miss out on this exclusive offer to revitalize your skin and achieve a dewy, radiant glow.', 'neu.png', 'show');
-
+(4, 'b-80001', '1357678', 'cat-20006', 'scat-30006', 'spicy noodles', 'chines special noodles', ' A bowl of slurpy, tasty and spicy noodles is a dish that we could hard', 'home-img-1.png', 'show'),
+(5, 'b-80002', '1357678', 'cat-20003', 'scat-30011', 'spicy pizza', 'hot & spicy dishes', ' a flat, open-faced baked pie of Italian origin, consisting of a thin layer of bread dough topped wit', 'home-img-3.png', 'show'),
+(6, 'b-80003', '1357678', 'cat-20002', 'scat-30005', 'spicy chicken', 'world famous dishes', '  Delicious chicken recipes from the pakistan best chefs including roast chicken', 'home-img-2.png', 'hide'),
+(7, 'b-80004', '1357678', 'cat-20008', 'scat-30012', 'hyderbadi biryani', 'very tasty and spicy', 'N/A', 'home-img-4.png', 'show');
 -- --------------------------------------------------------
 
 --
