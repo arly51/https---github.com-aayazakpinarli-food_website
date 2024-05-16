@@ -289,7 +289,7 @@ function special_menu()
 
 function sign_up()
 {
-    echo ' 
+    echo '
     <div class="main">
     
              <!-- Sign up form -->
@@ -317,8 +317,16 @@ function sign_up()
                                     <input type="password" name="re_pass" id="re_pass" required placeholder="Repeat your password"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
-                                    <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                <label for="city"><i class="fas fa-user"></i></label>
+                                <input type="text" name="city" id="name"  required placeholder="City"/>
+                                </div>
+                                <div class="form-group">
+                                <label for="district"><i class="fas fa-user"></i></label>
+                                <input type="text" name="district" id="name"  required placeholder="District"/>
+                                </div>
+                                <div class="form-group">
+                                <label for="address"><i class="fas fa-user"></i></label>
+                                <input type="text" name="address" id="name"  required placeholder="Address"/>
                                 </div>
                                 <div class="form-group form-button">
                                     <input type="button" name="signup"   id="signup" onclick="register_function()" class="form-submit" value="Register"/>
