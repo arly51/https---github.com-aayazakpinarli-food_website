@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="text-center text-150">
-                        <a href="#" class="logo text-dark"><i class="fas fa-utensils text-success"></i>resto.</a>
+                        <a href="#" class="logo text-dark"><i class="fas fa-utensils text-success"></i>CodersMarket</a>
                     </div>
                     </div>
                 </div>
@@ -57,7 +57,6 @@
                             <div class="my-1">
                                Address : <?=$data["address"]?>
                             </div>
-                            <div class="my-1"><i class="fa fa-phone fa-flip-horizontal text-secondary"></i> <b class="text-600"><?=$data["number"]?></b></div>
                         </div>
                     </div>
                     <!-- /.col -->

@@ -171,405 +171,75 @@ function tables(){
 function formModals(){
   echo '
 
-  <div class="modal fade" id="userInsertModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+  <div class="modal fade" id="productsInsertModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
           <div class="modal-content">
               <div class="modal-header" style="padding: 0.3rem 1rem !important;">
-                  <h5 class="modal-title" id=""> ADD User data</h5>
+                  <h5 class="modal-title" id=""> ADD new Products</h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                  <form  id="userInsertForm" action="js/database/userUpdate.php" method="post"  accept-charset="multipart/form-data" >
+                  <form  id="productsInsertForm" action="js/database/productsUpdate.php" method="post"  accept-charset="multipart/form-data" >
                           
                           <input type="hidden" name="action" value="insert">
-                          <div class="mb-2">
-                            <label for="" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="UserName" id="UserName" aria-describedby="emailHelpId" placeholder="Name">
-                            
-                          </div>
-                          <div class="mb-2">
-                            <label for="" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="UserEmail" id="UserEmail" aria-describedby="emailHelpId" placeholder="email">
-                            
-                          </div>
-                          <div class="mb-2">
-                            <label for="" class="form-label">password</label>
-                            <input type="password" class="form-control" name="UserPwd" id="UserPwd" aria-describedby="emailHelpId" placeholder="password">
-                            
-                          </div>
-                          <div class="mb-2">
-                              <label for="" class="form-label">Role</label>
-                              <select class="form-select form-select-lg" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" name="UserRole" id="UserRole">
-                                  
-                                  <option selected value="2">user</option>
-                                  <option value="1">Admin</option>
-                              </select>
-                          </div>
-                          <div class="mb-2">
-                            <label for="" class="form-label">Choose Image</label>
-                            <input type="file" class="form-control" name="UserImg" id="UserImg" placeholder="" aria-describedby="fileHelpId">
-                          </div>
-  
-                      
-                          <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="submit" id="userSubmit" class="btn btn-primary">Save</button>
-                          </div>
-                          </div>
-                      </form>
-          </div>
-      </div>
-    </div>
-      <div class="modal fade" id="EditModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-              <div class="modal-content">
-                  <div class="modal-header" style="padding: 0.3rem 1rem !important;">
-                      <h5 class="modal-title" > Edit User </h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                      <div  id="FormEdit"  >
-                      
-                          </div>
-              </div>
-          </div>
-          </div>
-      </div>
-    <div class="modal fade" id="productsInsertModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-              <div class="modal-content">
-                  <div class="modal-header" style="padding: 0.3rem 1rem !important;">
-                      <h5 class="modal-title" id=""> ADD new Products</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                          <form  id="productsInsertForm" action="js/database/productsUpdate.php" method="post"  accept-charset="multipart/form-data" >
-                                      
-                                          <input type="hidden" name="action" value="insert">
-                                  <div class="row">
-                                        <div class="col-6">
-                                            <div class="mb-2">
-                                                  <label for="" class="form-label">Title</label>
-                                                  <input type="text" class="form-control" name="pTitle"  placeholder="Title">
-                                            </div>    
-                                        </div>
-
-
-
-                                  <div class="col-6">
-
+                          <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-2">
+                                          <label for="" class="form-label">Title</label>
+                                          <input type="text" class="form-control" name="pTitle"  placeholder="Title">
+                                    </div>    
+                                </div>
+                                <div class="col-6">
                                   <div class="mb-2">
-                                  <label for="" class="form-label">Subtitle</label>
-                                  <input type="text" class="form-control" name="pSubtitle"  placeholder="Subtile">
-
+                                    <label for="" class="form-label">Subtitle</label>
+                                    <input type="text" class="form-control" name="pSubtitle"  placeholder="Subtile">
                                   </div>
-                                  </div>
-                                  <div class="col-6">
-
+                                </div>
+                                <div class="col-6">
                                   <div class="mb-2">
-                                  <label for="" class="form-label">Category</label>
-                                  <select class="form-select form-select-lg" name="Cat_id" id="cat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" name="UserRole" id="UserRole">
-
-                                  </select>
+                                    <label for="" class="form-label">Category</label>
+                                    <select class="form-select form-select-lg" name="Cat_id" id="cat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" name="UserRole" id="UserRole">
+                                    </select>
                                   </div>
-                                  </div>
-
-
-
-                                  <div class="col-6">
-
-
+                                </div>
+                                <div class="col-6">
                                   <div class="mb-2">
-                                  <label for="" class="form-label">Sub Category</label>
-                                  <select class="form-select form-select-lg " name="Scat_id" disabled id="Scat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" name="UserRole" id="UserRole">
-
-                                  </select>
+                                    <label for="" class="form-label">Sub Category</label>
+                                    <select class="form-select form-select-lg " name="Scat_id" disabled id="Scat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" name="UserRole" id="UserRole">
+                                    </select>
                                   </div>
-                                  </div>
-
-                                  <div class="col-6">
-
+                                </div>
+                                <div class="col-6">
                                   <div class="mb-2">
-                                  <label for="" class="form-label">Prize</label>
-                                  <input type="tel" class="form-control" name="pPrize" >
-
+                                    <label for="" class="form-label">Prize</label>
+                                    <input type="tel" class="form-control" name="pPrize">
                                   </div>
-                                  </div>
-                                  <div class="col-6">
+                                </div>
+                                <div class="col-6">
                                   <div class="mb-2">
-                                  <label for="" class="form-label">Choose Image</label>
-                                  <input type="file" class="form-control" name="pImg" >
+                                    <label for="" class="form-label">Choose Image</label>
+                                    <input type="file" class="form-control" name="pImg">
                                   </div>
-
+                                </div>
+                                <div class="col-12">
+                                  <div class="mb-2">
+                                    <label for="" class="form-label">description</label>
+                                    <textarea class="form-control" name="pDesc" id="" rows="3"></textarea>
                                   </div>
-
-                                  <div class="mb-3">
-                                  <label for="" class="form-label">description</label>
-                                  <textarea class="form-control" name="pDesc" id="" rows="3"></textarea>
-                                  </div>
-
-
-                                  <div class="modal-footer">
+                                </div>
+                                <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                   <button type="submit" id="productsSubmit" class="btn btn-primary">Save</button>
-                                  </div>
-                                  </div>
+                                </div>
+                          </div>
                       </form>
               </div>
           </div>
       </div>
     </div>
-    <div class="modal fade" id="bannersInsertModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-              <div class="modal-content">
-                  <div class="modal-header" style="padding: 0.3rem 1rem !important;">
-                      <h5 class="modal-title" id=""> Add New banner </h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                          <form  id="bannersInsertForm" action="js/database/bannersUpdate.php" method="post"  accept-charset="multipart/form-data" >
-                                      
-                                          <input type="hidden" name="action" value="insert">
-                                  <div class="row">
-                                        <div class="col-6">
-                                            <div class="mb-2">
-                                                  <label for="" class="form-label">Title</label>
-                                                  <input type="text" class="form-control" name="bTitle"  placeholder="Title">
-                                            </div>    
-                                        </div>
-
-
-
-                                  <div class="col-6">
-
-                                  <div class="mb-2">
-                                  <label for="" class="form-label">Subtitle</label>
-                                  <input type="text" class="form-control" name="bSubtitle"  placeholder="Subtile">
-
-                                  </div>
-                                  </div>
-
-
-
-
-
-                                    <div class="col-6">
-
-                                  <div class="mb-2">
-                                  <label for="" class="form-label">Category</label>
-                                  <select class="form-select form-select-lg" name="Cat_id" id="bCat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" >
-
-                                  </select>
-                                  </div>
-                                  </div>
-
-
-
-                                  <div class="col-6">
-
-
-                                  <div class="mb-2">
-                                  <label for="" class="form-label">Sub Category</label>
-                                  <select class="form-select form-select-lg " name="Scat_id" disabled id="bScat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" >
-
-                                  </select>
-                                  </div>
-                                  </div>
-
-                                  <div class="col-12">
-                                  <div class="mb-2">
-                                  <label for="" class="form-label">Choose Image</label>
-                                  <input type="file" class="form-control" name="bImg" >
-                                  </div>
-
-                                  </div>
-
-                                  <div class="mb-3">
-                                  <label for="" class="form-label">description</label>
-                                  <textarea class="form-control" name="bDesc" id="" rows="3"></textarea>
-                                  </div>
-
-
-                                  <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  <button type="submit"  class="btn btn-primary">Save</button>
-                                  </div>
-                                  </div>
-                      </form>
-              </div>
-          </div>
-      </div>
-    </div>
-    <div class="modal fade" id="categoryInsertModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-              <div class="modal-content">
-                  <div class="modal-header" style="padding: 0.3rem 1rem !important;">
-                      <h5 class="modal-title" id=""> add new category</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                          <form  id="categoryInsertForm" action="js/database/catUpdate.php" method="post"  accept-charset="multipart/form-data" >
-                                      
-                                          <input type="hidden" name="action" value="insert">
-                                  <div class="row">
-                                        <div class="col-12">
-                                            <div class="mb-2">
-                                                  <label for="" class="form-label">category Name</label>
-                                                  <input type="text" class="form-control" name="catName"  placeholder="name">
-                                            </div>    
-                                        </div>
-
-
-
-
-                                  <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  <button type="submit" id="productsSubmit" class="btn btn-primary">Save</button>
-                                  </div>
-                                  </div>
-                      </form>
-              </div>
-          </div>
-      </div>
-    </div>
-    <div class="modal fade" id="SubCategoryInsertModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-              <div class="modal-content">
-                  <div class="modal-header" style="padding: 0.3rem 1rem !important;">
-                      <h5 class="modal-title" id=""> add new category</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                          <form  id="subcategoryInsertForm" action="js/database/SubcatUpdate.php" method="post"  accept-charset="multipart/form-data" >
-                                      
-                                          <input type="hidden" name="action" value="insert">
-                                  <div class="row">
-                                        <div class="col-12">
-                                            <div class="mb-2">
-                                                  <label for="" class="form-label">category Name</label>
-                                                  <input type="text" class="form-control" name="scatName"  placeholder="name">
-                                            </div>    
-                                        </div>
-                                        
-                                  <div class="mb-2 col-12">
-                                  <label for="" class="form-label">Category</label>
-                                  <select class="form-select form-select-lg" name="Cat_id" id="sCat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" >
-
-                                  </select>
-                                  </div>
-
-
-
-
-                                  <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  <button type="submit" id="productsSubmit" class="btn btn-primary">Save</button>
-                                  </div>
-                                  </div>
-                      </form>
-              </div>
-          </div>
-      </div>
-    </div>
-    <div class="modal fade" id="stockInsertModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header" style="padding: 0.3rem 1rem !important;">
-                <h5 class="modal-title" id=""> ADD new Products</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                    <form  id="stockInsertForm" action="js/database/proStockUpdate.php" method="post"  accept-charset="multipart/form-data" >
-                                
-                                    <input type="hidden" name="action" value="insert">
-                            <div class="row">
-
-
-
-
-
-                              <div class="col-6">
-
-                            <div class="mb-2">
-                            <label for="" class="form-label">Category</label>
-                            <select class="form-select form-select-lg" name="Cat_id" id="stockCat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" >
-
-                            </select>
-                            </div>
-                            </div>
-
-
-
-                            <div class="col-6">
-
-
-                            <div class="mb-2">
-                            <label for="" class="form-label">Sub Category</label>
-                            <select class="form-select form-select-lg " name="Scat_id" disabled id="StockScat_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;" >
-
-                            </select>
-                            </div>
-                            </div>
-                              
-                            <div class="mb-2 col-6">
-                            <label for="" class="form-label">product</label>
-                            <select class="form-select form-select-lg " name="p_id" disabled id="pro_select_input" style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;">
-
-                            </select>
-                            </div>
-                            <div class="col-3">
-
-                            <div class="mb-2">
-                            <label for="" class="form-label">Prize</label>
-                            <input type="tel" class="form-control" name="pPrize" >
-
-                            </div>
-                            </div>
-                            
-                            <div class="col-3">
-
-                            <div class="mb-2">
-                            <label for="" class="form-label">tax</label>
-                            <input type="tel" class="form-control" name="pTax" >
-
-                            </div>
-                            </div>
-                            
-                            <div class="col-3">
-
-                            <div class="mb-2">
-                            <label for="" class="form-label">Quantity</label>
-                            <input type="tel" class="form-control" name="pQty" >
-
-                            </div>
-                            </div>
-                            <div class="col-6">
-                                          <div class="input">
-                                  <label>date and time</label>
-                                  <input type="datetime-local" class="form-control" name="pDate" value="' . date("d-m-y") . '">
-                              </div>
-
-                            </div>
-
-                            <div class="mb-3 col-3">
-                            <label for="" class="form-label">status</label>
-                            <select class="form-select form-select-lg " name="pSts"  style="padding-top: 0.2rem !important;padding-bottom: 0.2rem !important;"> <option>show</option><option>hide</option> </select>
-                            </div>
-
-
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" id="productsSubmit" class="btn btn-primary">Save</button>
-                            </div>
-                            </div>
-                </form>
-        </div>
-    </div>
-</div>
-</div>
-
-  ';
+</div>';
 }
+
 function msgModals(){
           echo '
 

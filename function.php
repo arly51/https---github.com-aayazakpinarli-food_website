@@ -318,15 +318,15 @@ function sign_up()
                                 </div>
                                 <div class="form-group">
                                 <label for="city"><i class="fas fa-user"></i></label>
-                                <input type="text" name="city" id="name"  required placeholder="City"/>
+                                <input type="text" name="city" id="city"  required placeholder="City"/>
                                 </div>
                                 <div class="form-group">
                                 <label for="district"><i class="fas fa-user"></i></label>
-                                <input type="text" name="district" id="name"  required placeholder="District"/>
+                                <input type="text" name="district" id="district"  required placeholder="District"/>
                                 </div>
                                 <div class="form-group">
                                 <label for="address"><i class="fas fa-user"></i></label>
-                                <input type="text" name="address" id="name"  required placeholder="Address"/>
+                                <input type="text" name="address" id="address"  required placeholder="Address"/>
                                 </div>
                                 <div class="form-group form-button">
                                     <input type="button" name="signup"   id="signup" onclick="register_function()" class="form-submit" value="Register"/>
