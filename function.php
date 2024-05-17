@@ -291,60 +291,67 @@ function sign_up()
 {
     echo '
     <div class="main">
-    
-             <!-- Sign up form -->
-            <section class="signup">
-                <div class="container">
-                    <div class="signup-content d-md-flex ">
-                        <div class="signup-form">
-                            <h2 class="form-title">Sign up</h2>
-                            <form method="POST"  class="register-form" id="register-form" enctype="multipart/form-data">
-                            <div class="alert alert-danger " id="message" style="display: none ;" role="alert"></div> 
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content d-md-flex ">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="POST" action="database/sign_up.php" class="register-form" id="register-form" enctype="multipart/form-data">
+                            <div class="alert alert-danger" id="message" style="display: none;" role="alert"></div>
                             <div class="form-group">
-                                    <label for="name"><i class="fas fa-user"></i></label>
-                                    <input type="text" name="name" id="name"  required placeholder="Your Name"/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email"><i class="fas fa-envelope"></i></label>
-                                    <input type="email" name="email" id="email" required placeholder="Your Email"/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pass"><i class="fas fa-lock "></i></label>
-                                    <input type="password" name="pass" id="pass" required placeholder="Password"/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="re-pass"><i class="fas fa-lock"></i></label>
-                                    <input type="password" name="re_pass" id="re_pass" required placeholder="Repeat your password"/>
-                                </div>
-                                <div class="form-group">
+                                <label for="name"><i class="fas fa-user"></i></label>
+                                <input type="text" name="name" id="name" required placeholder="Your Name"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i></label>
+                                <input type="email" name="email" id="email" required placeholder="Your Email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="fas fa-lock"></i></label>
+                                <input type="password" name="pass" id="pass" required placeholder="Password"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="fas fa-lock"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" required placeholder="Repeat your password"/>
+                            </div>
+                            <div class="form-group">
                                 <label for="city"><i class="fas fa-user"></i></label>
-                                <input type="text" name="city" id="city"  required placeholder="City"/>
-                                </div>
-                                <div class="form-group">
+                                <input type="text" name="city" id="city" required placeholder="City"/>
+                            </div>
+                            <div class="form-group">
                                 <label for="district"><i class="fas fa-user"></i></label>
-                                <input type="text" name="district" id="district"  required placeholder="District"/>
-                                </div>
-                                <div class="form-group">
+                                <input type="text" name="district" id="district" required placeholder="District"/>
+                            </div>
+                            <div class="form-group">
                                 <label for="address"><i class="fas fa-user"></i></label>
-                                <input type="text" name="address" id="address"  required placeholder="Address"/>
-                                </div>
-                                <div class="form-group form-button">
-                                    <input type="button" name="signup"   id="signup" onclick="register_function()" class="form-submit" value="Register"/>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="signup-image">
-                
-                            <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
-                            <a href="login.php" class="signup-image-link">I am already member <u class="text-info" style="text-decoration: underline;">sign in</u>  </a>
-                        </div>
+                                <input type="text" name="address" id="address" required placeholder="Address"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="user_type"><i class="fas fa-user"></i></label>
+                                <select name="user_type" id="user_type" required>
+                                    <option value="" disabled selected>Select User Type</option>
+                                    <option value="1">Market User</option>
+                                    <option value="2">Consumer User</option>
+                                </select>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="images/signup-image.jpg" alt="sign up image"></figure>
+                        <a href="login.php" class="signup-image-link">I am already member <u class="text-info" style="text-decoration: underline;">sign in</u></a>
                     </div>
                 </div>
-            </section>
-    
-    </div>
-     <!-- main div end here -->';
+            </div>
+        </section>
+    </div>';
 }
+
+
+
 
 function sign_in()
 {
