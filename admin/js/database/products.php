@@ -69,7 +69,6 @@ while($row = mysqli_fetch_assoc($run_query)){
     $subarray[] = $row["p_id"];
     $subarray[] =   "<img src='../images/{$row["p_image"]}' width='30px' style='border-radius:50%; ' alt='{$row["p_image"]}'>";
     $subarray[] = $row["p_title"];
-    $subarray[] = $row["p_subtitle"];
     $subarray[] = $row["p_prize"];
     $subarray[] = '<div class="form-check form-switch">
     <input class="form-check-input" type="checkbox" name="check" '.$checked.' >
@@ -84,7 +83,6 @@ $col[] = '<th  data-by="'.$order.'" data-table-th="id"> <b>#</b> <i class="fas  
 $col[] = '<th  data-by="'.$order.'" data-table-th="p_id"> <b>id</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="p_image"><b>Images</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="p_title"><b>Title</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
-$col[] = '<th  data-by="'.$order.'" data-table-th="p_subtitle"><b>Subtitle</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="p_prize"><b>Prize</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="status"><b>Status</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th >Action</th>';

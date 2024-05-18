@@ -68,16 +68,9 @@ while($row = mysqli_fetch_assoc($run_query)){
     $sno++;
     $subarray = array();
     $subarray[] = $sno;
-    // $subarray[] =   "<img src='../images/{$row["p_image"]}' width='30px' style='border-radius:50%; ' alt='{$row["p_image"]}'>";
-    $subarray[] = "<a id='find_id' data-url='js/database/proStock.php'  data-id='{$row["ps_id"]}'>{$row["ps_id"]}</a>";
     $subarray[] = "<a id='find_id' data-url='js/database/products.php'  data-id='{$row["pro_id"]}'>{$row["pro_id"]}</a>";
-    $subarray[] = "<a id='find_id' data-url='js/database/cat.php'  data-id='{$row["cat_id"]}'>{$row["cat_id"]}</a>";
-    $subarray[] = "<a id='find_id' data-url='js/database/Subcat.php'  data-id='{$row["scat_id"]}'>{$row["scat_id"]}</a>";
-    $subarray[] = "<a id='find_id' data-url='js/database/users.php'  data-id='{$row["u_id"]}'>{$row["u_id"]}</a>";
     $subarray[] = $row["qty"];
     $subarray[] = $row["prize"];
-    $subarray[] = $row["tax"];
-    $subarray[] = $row["TPrize"];
     $subarray[] = $row["date"];
     $subarray[] = '<div class="form-check form-switch">
     <input class="form-check-input" type="checkbox" name="check" '.$checked.' >
@@ -89,15 +82,9 @@ while($row = mysqli_fetch_assoc($run_query)){
 };
 $col = [];
 $col[] = '<th  data-by="'.$order.'" data-table-th="pp_id"> <b>#</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
-$col[] = '<th  data-by="'.$order.'" data-table-th="ps_id"> <b>Invoice</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="pro_id"> <b>product </b> <i class="fas  fa-sort float-end text-muted"></i></th>';
-$col[] = '<th  data-by="'.$order.'" data-table-th="cat_id"><b>category </b> <i class="fas  fa-sort float-end text-muted"></i></th>';
-$col[] = '<th  data-by="'.$order.'" data-table-th="scat_id"><b>sub Category </b> <i class="fas  fa-sort float-end text-muted"></i></th>';
-$col[] = '<th  data-by="'.$order.'" data-table-th="u_id"><b>user</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="qty"><b>Total qty</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="prize"><b>Prize</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
-$col[] = '<th  data-by="'.$order.'" data-table-th="tax"><b>tax</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
-$col[] = '<th  data-by="'.$order.'" data-table-th="prize"><b>Total Prize</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="date"><b>date</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th >Action</th>';
 

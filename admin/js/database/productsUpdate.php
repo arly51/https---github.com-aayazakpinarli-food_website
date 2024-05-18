@@ -8,12 +8,15 @@ include "AdminLoginCheck.php";
  $cat_id= mysqli_real_escape_string($conn, $_POST["Cat_id"]);
  $scat_id=(isset($_POST["Scat_id"]) != "") ?  mysqli_real_escape_string($conn, $_POST["Scat_id"]) : "";;
 $desc= mysqli_real_escape_string($conn, $_POST["pDesc"]);
+$unique_id = mysqli_real_escape_string($conn, $_POST["unique_id"]);
 
  if ($cat_id != ""  && $prize != "" && $title != "" && $subtile != "") {
     // making invoice
-    $q2=$conn->query("SELECT MAX(p_id) as last_inv FROM `product`");
+    $q2=$conn->query("SELECT MAX(p_id) as last_inv FROM `product` where market_id = $unique_id ");
     if(mysqli_num_rows($q2) >0){
 
+        // market 1 ahmer unique id  =  1357678
+        // new market id = 267757519
                    $last = mysqli_fetch_assoc($q2);
                  
                             function increment($matches)

@@ -67,7 +67,6 @@ while($row = mysqli_fetch_assoc($run_query)){
     $subarray[] = "<a id='find_id' data-url='js/database/proSell.php' data-id ='{$row["inv_id"]}' data-inv-id ='{$row["inv_id"]}'>{$row["inv_id"]}</a>";
     $subarray[] = $row["item"];
     $subarray[] = $row["TQty"];
-    $subarray[] = $row["tax"] ."%";
     $subarray[] = $row["Prize"];
     $subarray[] = $row["TPrize"];
     $subarray[] = $row["date"];
@@ -81,7 +80,6 @@ $col[] = '<th  data-by="'.$order.'" data-table-th="inv_id"><b>invoices </b> <i c
 $col[] = '<th  data-by="'.$order.'" data-table-th=""><b>Item</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th=""><b>Total Qnty</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 
-$col[] = '<th  data-by="'.$order.'" data-table-th=""><b>tax</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th=""><b>Prize</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th=""><b>Total Prize</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="date"><b>date</b> <i class="fas  fa-sort float-end text-muted"></i></th>';

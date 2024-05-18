@@ -36,6 +36,7 @@ if (!empty($u_name) && !empty($u_email) && !empty($u_pass) && !empty($role_id)) 
                         $_SESSION["role_id"] = $row["role_id"];
                         echo true;
                     }
+                    header("Location: ../index.php") ;
                 } else {
                     echo 'Query failed: ' . $conn->error;
                 }
@@ -47,4 +48,6 @@ if (!empty($u_name) && !empty($u_email) && !empty($u_pass) && !empty($role_id)) 
 } else {
     echo "All input fields are required";
 }
+
+
 ?>

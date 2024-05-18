@@ -9,6 +9,6 @@ if(isset($_SESSION["role_id"])){
 
    }
 }else{
-   
-   die("<script>alert(' please admin login first ')</script>");
+   header("Location: ../../index.php") ;
+  
 }

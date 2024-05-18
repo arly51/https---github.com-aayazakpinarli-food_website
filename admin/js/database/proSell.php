@@ -70,7 +70,6 @@ while($row = mysqli_fetch_assoc($run_query)){
     $subarray[] = $row["title"];
     $subarray[] = $row["qty"];
     $subarray[] = $row["prize"];
-    $subarray[] = $row["tax"] ."%";
     $subarray[] = $row["date"];
     $subarray[] = "<a  class='btn btn-sm mr-1 {$class}' '>{$row["status"]}</a>";
   
@@ -84,7 +83,6 @@ $col[] = '<th  data-by="'.$order.'" data-table-th="p_title"><b>Title</b> <i clas
 $col[] = '<th  data-by="'.$order.'" data-table-th="qty"><b>qty</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 
 $col[] = '<th  data-by="'.$order.'" data-table-th="prize"><b>Prize</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
-$col[] = '<th  data-by="'.$order.'" data-table-th="tax"><b>tax</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="date"><b>date</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 $col[] = '<th  data-by="'.$order.'" data-table-th="status"><b>Status</b> <i class="fas  fa-sort float-end text-muted"></i></th>';
 
