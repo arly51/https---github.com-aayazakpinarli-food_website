@@ -4,66 +4,7 @@ if($_POST["action"] == "cards"){
                 $f = [];
                 $output = "";
                 $link = "";
-                $q = $conn->query("SELECT COUNT(*) as user FROM `register` ");
-                if($q){
-                        $row = mysqli_fetch_assoc($q);
-                        $res = [
-                            "name" => "user",
-                            "result" => $row["user"],
-                            "color" => "var(--bs-danger)",
-                            "icons" => "fas fa-user",
-                            "table" => "users.php",
-                            "formModalId" => "#userInsertModal"
-                        ];
-                        // array_push
-                    $f[] = $res;
-                }
-                $q5=$conn->query("SELECT COUNT(*) as pro FROM `banner`");
-                if($q5){
-                    $row = mysqli_fetch_assoc($q5);
-                    $res = [
-                        "name" => "Banners",
-                        "result" => $row["pro"],
-                        "color" => "var(--bs-warning)",
-                        "icons" => "fas fa-images",
-                        "table" => "banners.php",
-                        "formModalId" => "#bannersInsertModal"
-                    ];
-                    $f[] = $res;
 
-
-                }
-                $q3=$conn->query("SELECT COUNT(*) as cat FROM `catagory` ");
-                if($q3){
-                    $row = mysqli_fetch_assoc($q3);
-                    $res = [
-                        "name" => "category",
-                        "result" => $row["cat"],
-                        "color" => "var(--first-color)",
-                        "icons" => "fas  fa-cookie",
-                        "table" => "cat.php",
-                        "formModalId" => "#categoryInsertModal"
-                    ];
-                    $f[] = $res;
-
-
-                }
-
-                $q4=$conn->query("SELECT COUNT(*) as scat FROM `sub_category` ");
-                if($q4){
-                    $row = mysqli_fetch_assoc($q4);
-                    $res = [
-                        "name" => "sub_Category",
-                        "result" => $row["scat"],
-                        "color" => "var(--bs-gray)",
-                        "icons" => "fas  fa-cookie-bite",
-                        "table" => "SubCat.php",
-                        "formModalId" => "#SubCategoryInsertModal"
-                    ];
-                    $f[] = $res;
-
-
-                }
 
 
                 $q2=$conn->query("SELECT COUNT(*) as pro FROM `product`");

@@ -2,6 +2,5 @@
 
 headers();
 sign_in();
-
 footers();
 ?>
