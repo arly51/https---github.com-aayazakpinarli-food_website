@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 16 May 2024, 17:43:54
+-- Üretim Zamanı: 18 May 2024, 08:17:48
 -- Sunucu sürümü: 8.2.0
 -- PHP Sürümü: 8.2.13
 
@@ -30,15 +30,15 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `banner`;
 CREATE TABLE IF NOT EXISTS `banner` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `b_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `u_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `cat_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `scat_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `b_title` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `b_subtitle` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `b_desc` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
-  `b_image` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `status` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'show',
+  `b_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `u_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `cat_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `scat_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `b_title` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `b_subtitle` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `b_desc` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `b_image` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `status` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'show',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `cash` (
   `invetment` decimal(10,0) NOT NULL,
   `profite` decimal(10,0) NOT NULL,
   `extra` decimal(10,0) NOT NULL,
-  `date` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `date` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -176,11 +176,11 @@ INSERT INTO `catagory` (`id`, `cat_id`, `u_id`, `cat_name`, `status`) VALUES
 DROP TABLE IF EXISTS `colors`;
 CREATE TABLE IF NOT EXISTS `colors` (
   `clr_id` int NOT NULL AUTO_INCREMENT,
-  `hsl` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `clr` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `color_alt` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `color_lighter` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `clr_sts` varchar(50) COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'white',
+  `hsl` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `clr` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `color_alt` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `color_lighter` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `clr_sts` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT 'white',
   PRIMARY KEY (`clr_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -204,8 +204,8 @@ DROP TABLE IF EXISTS `feedback`;
 CREATE TABLE IF NOT EXISTS `feedback` (
   `f_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
-  `inv_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `msg` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
+  `inv_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `msg` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `date` datetime NOT NULL,
   PRIMARY KEY (`f_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -241,6 +241,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `status` varchar(20) NOT NULL DEFAULT 'show',
   `action` varchar(10) NOT NULL DEFAULT 'far',
   `date` datetime(6) NOT NULL,
+  `market_id` int NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
@@ -248,18 +249,18 @@ CREATE TABLE IF NOT EXISTS `product` (
 -- Tablo döküm verisi `product`
 --
 
-INSERT INTO `product` (`id`, `p_id`, `cat_id`, `scat_id`, `u_id`, `p_title`, `p_subtitle`, `p_desc`, `p_prize`, `p_image`, `status`, `action`, `date`) VALUES
-(1, 'p-10001', 'cat-20001', 'scat-30001', '1357678', 'Milk', 'Milk', 'Essential for its nutritional value and versatility in dairy products. ', 30, 'milk.png', 'show', 'far', '2023-02-20 17:46:03.000000'),
-(2, 'p-10002', 'cat-20004', 'scat-30003', '1357678', 'Cheese', 'Cheese', 'major product in the global dairy market, valued for its diverse varieties and culinary uses.', 50, 'cheese.png', 'show', 'far', '2023-02-21 17:46:03.000000'),
-(3, 'p-10003', 'cat-20003', 'scat-30011', '1357678', 'Yoghurt', 'Yoghurt', 'Yogurt is a significant product in the global dairy market, appreciated for its health benefits and versatility', 55, 'yoghurt.png', 'show', 'far', '2023-03-01 20:14:29.000000'),
-(4, 'p-10004', 'cat-20004', 'scat-30013', '1357678', 'Ice cream', 'Ice cream', 'Ice cream is a popular product in the global dairy market, known for its wide variety of flavors and widespread appeal', 25, 'icecream.png', 'show', 'far', '2023-02-22 17:46:03.000000'),
-(5, 'p-10005', 'cat-20005', 'scat-30004', '1357678', 'Rice', 'Rice', 'Rice is a staple food in the global market, essential for its versatility and nutritional value. ', 17, 'rice.png', 'hide', 'far', '2023-02-23 17:46:03.000000'),
-(6, 'p-10006', 'cat-20001', 'scat-30014', '1357678', 'Shampoo', 'Shampoo', 'N/A', 100, 'shampoo.png', 'show', 'far', '2023-02-23 17:46:03.000000'),
-(13, 'p-10008', 'cat-20008', 'scat-30012', '1357678', 'Pepper', 'Pepper', 'Pepper, including black, white, and green types, is a key global spice produced.', 10, 'pepper.png', 'show', 'far', '2023-02-24 17:46:03.000000'),
-(14, 'p-10009', 'cat-20001', 'scat-30009', '1357678', 'Tomato', 'Tomato', 'Tomatoes are a staple in our market, widely used in cooking and food processing. ', 7, 'tomato.png', 'show', 'far', '2023-02-25 17:46:03.000000'),
-(17, 'p-10010', 'cat-20005', 'scat-30010', '1357678', 'Mango', 'Mango', 'Mangoes are a popular tropical fruit in our market, known for their sweet taste and nutritional benefits.', 20, 'mangoe.png', 'show', 'far', '2023-02-26 17:46:03.000000'),
-(18, 'p-10011', 'cat-20007', 'scat-30015', '1357678', 'avocado', 'Avocado', 'Avocados are a highly valued fruit in the global market, celebrated for their rich taste and health benefits. ', 20, 'avocado.png', 'show', 'far', '2023-02-28 17:46:03.000000'),
-(19, 'p-10012', 'cat-20002', 'scat-30005', '1357678', 'Spinach', 'Spinach', 'Spinach is a widely consumed leafy green vegetable in the global market, valued for its nutritional benefits and versatility in cooking. ', 8, 'spinach.png', 'show', 'far', '2023-03-01 20:15:34.000000');
+INSERT INTO `product` (`id`, `p_id`, `cat_id`, `scat_id`, `u_id`, `p_title`, `p_subtitle`, `p_desc`, `p_prize`, `p_image`, `status`, `action`, `date`, `market_id`) VALUES
+(1, 'p-10001', 'cat-20001', 'scat-30001', '1357678', 'Milk', 'Milk', 'Essential for its nutritional value and versatility in dairy products. ', 30, 'milk.png', 'show', 'far', '2023-02-20 17:46:03.000000', 1357678),
+(2, 'p-10002', 'cat-20004', 'scat-30003', '1357678', 'Cheese', 'Cheese', 'major product in the global dairy market, valued for its diverse varieties and culinary uses.', 50, 'cheese.png', 'show', 'far', '2023-02-21 17:46:03.000000', 1357678),
+(3, 'p-10003', 'cat-20003', 'scat-30011', '1357678', 'Yoghurt', 'Yoghurt', 'Yogurt is a significant product in the global dairy market, appreciated for its health benefits and versatility', 55, 'yoghurt.png', 'show', 'far', '2023-03-01 20:14:29.000000', 1357678),
+(4, 'p-10004', 'cat-20004', 'scat-30013', '1357678', 'Ice cream', 'Ice cream', 'Ice cream is a popular product in the global dairy market, known for its wide variety of flavors and widespread appeal', 25, 'icecream.png', 'show', 'far', '2023-02-22 17:46:03.000000', 51),
+(5, 'p-10005', 'cat-20005', 'scat-30004', '1357678', 'Rice', 'Rice', 'Rice is a staple food in the global market, essential for its versatility and nutritional value. ', 17, 'rice.png', 'hide', 'far', '2023-02-23 17:46:03.000000', 51),
+(6, 'p-10006', 'cat-20001', 'scat-30014', '1357678', 'Shampoo', 'Shampoo', 'N/A', 100, 'shampoo.png', 'show', 'far', '2023-02-23 17:46:03.000000', 51),
+(13, 'p-10008', 'cat-20008', 'scat-30012', '1357678', 'Pepper', 'Pepper', 'Pepper, including black, white, and green types, is a key global spice produced.', 10, 'pepper.png', 'show', 'far', '2023-02-24 17:46:03.000000', 51),
+(14, 'p-10009', 'cat-20001', 'scat-30009', '1357678', 'Tomato', 'Tomato', 'Tomatoes are a staple in our market, widely used in cooking and food processing. ', 7, 'tomato.png', 'show', 'far', '2023-02-25 17:46:03.000000', 51),
+(17, 'p-10010', 'cat-20005', 'scat-30010', '1357678', 'Mango', 'Mango', 'Mangoes are a popular tropical fruit in our market, known for their sweet taste and nutritional benefits.', 20, 'mangoe.png', 'show', 'far', '2023-02-26 17:46:03.000000', 2),
+(18, 'p-10011', 'cat-20007', 'scat-30015', '1357678', 'avocado', 'Avocado', 'Avocados are a highly valued fruit in the global market, celebrated for their rich taste and health benefits. ', 20, 'avocado.png', 'show', 'far', '2023-02-28 17:46:03.000000', 2),
+(19, 'p-10012', 'cat-20002', 'scat-30005', '1357678', 'Spinach', 'Spinach', 'Spinach is a widely consumed leafy green vegetable in the global market, valued for its nutritional benefits and versatility in cooking. ', 8, 'spinach.png', 'show', 'far', '2023-03-01 20:15:34.000000', 2);
 
 -- --------------------------------------------------------
 
@@ -270,16 +271,16 @@ INSERT INTO `product` (`id`, `p_id`, `cat_id`, `scat_id`, `u_id`, `p_title`, `p_
 DROP TABLE IF EXISTS `pro_stock`;
 CREATE TABLE IF NOT EXISTS `pro_stock` (
   `pp_id` int NOT NULL AUTO_INCREMENT,
-  `ps_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `cat_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `scat_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `pro_id` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `ps_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `cat_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `scat_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `pro_id` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `u_id` int NOT NULL,
   `qty` decimal(10,0) NOT NULL,
   `prize` decimal(10,0) NOT NULL,
   `tax` int NOT NULL DEFAULT '3',
-  `date` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `status` varchar(20) COLLATE utf8mb4_general_ci NOT NULL,
+  `date` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `status` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`pp_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -315,14 +316,14 @@ CREATE TABLE IF NOT EXISTS `register` (
   `city` varchar(15) NOT NULL,
   `district` varchar(15) NOT NULL,
   PRIMARY KEY (`u_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `register`
 --
 
 INSERT INTO `register` (`u_id`, `unique_id`, `Name`, `email`, `password`, `image`, `status`, `role_id`, `address`, `number`, `city`, `district`) VALUES
-(2, 1357678, 'ahmer ali', 'ahmer@gmail.com', '123', '1677523302uesr.jpg', 'signal_cellular_null', 1, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(2, 1357678, 'ahmer ali', 'ahmer@gmail.com', '123', '1677523302uesr.jpg', 'signal_cellular_4_bar', 1, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
 (3, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
 (13, 1133030496, 'samuel', 'samuel@gmail.com', '123', 'pic.jpg', 'signal_cellular_4_bar', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
 (16, 1117230790, 'rehman', 'rehman@gmail.com', '0000', '1663767978Koala.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
@@ -346,7 +347,10 @@ INSERT INTO `register` (`u_id`, `unique_id`, `Name`, `email`, `password`, `image
 (53, 676373578, 'umer akber', 'umerAkber@gmail.com', '123', '16755359111675420102pic.jpg', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
 (54, 1584050050, 'Junaid Rehman', 'junaidRehman@worker.in', '123', '1676111192pic-3.png', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
 (56, 1102389833, 'javeed iqbal', 'javedIgbal@gmal.com', '123', '1677596306Thinking-Woman-PNG.png', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
-(57, 317669658, 'Mahroosh  asad', 'mahroosh@hr.com', '123', '1677691780Thinking-Woman-PNG.png', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya');
+(57, 317669658, 'Mahroosh  asad', 'mahroosh@hr.com', '123', '1677691780Thinking-Woman-PNG.png', 'signal_cellular_null', 2, 'Ankara', 'N/A', 'Ankara', 'Cankaya'),
+(58, 181033846, 'ayaz', 'newMar@gmail.com', '123', '', 'signal_cellular_null', 1, 'ankara', 'N/A', 'ankara', 'ankara'),
+(59, 1165551694, 'sadasd', 'newMarss@gmail.com', 'asd', '', 'signal_cellular_4_bar', 2, 'asd', 'N/A', 'asd', 'asd'),
+(60, 1706500331, 'sadasd', 'newMarss@gmail.comaa', 'aaa', '', 'signal_cellular_null', 2, 'asd', 'N/A', 'asd', 'asd');
 
 -- --------------------------------------------------------
 
