@@ -87,7 +87,7 @@
         "date": "28-02-23",
         "status": "direct order",
         "number": "03409736543",
-        "address": "kARACHI"
+        "address": "Ankara"
     },
     {
         "cr_id": "28",
@@ -102,7 +102,7 @@
         "date": "28-02-23",
         "status": "direct order",
         "number": "03409736543",
-        "address": "kARACHI"
+        "address": "Ankara"
     },
     {
         "cr_id": "29",
@@ -372,7 +372,7 @@
         "date": "01-03-23",
         "status": "direct order",
         "number": "03409736543",
-        "address": "karachi"
+        "address": "Ankara"
     },
     {
         "cr_id": "47",
@@ -387,7 +387,7 @@
         "date": "01-03-23",
         "status": "direct order",
         "number": "03409736543",
-        "address": "karachi"
+        "address": "Ankara"
     },
     {
         "cr_id": "48",
@@ -402,7 +402,7 @@
         "date": "01-03-23",
         "status": "direct order",
         "number": "03409736543",
-        "address": "karachi"
+        "address": "Ankara"
     },
     {
         "cr_id": "49",
@@ -417,51 +417,6 @@
         "date": "01-03-23",
         "status": "direct order",
         "number": "03409736543",
-        "address": "karachi"
-    },
-    {
-        "cr_id": "50",
-        "inv_id": "inv-50021",
-        "cat_id": "cat-20007",
-        "scat_id": "scat-30015",
-        "pro_id": "p-10011",
-        "u_id": "570271184",
-        "qty": "1",
-        "prize": "20",
-        "tax": "3",
-        "date": "2024-05-17 04:54:13",
-        "status": "pending",
-        "number": null,
-        "address": null
-    },
-    {
-        "cr_id": "51",
-        "inv_id": "inv-50022",
-        "cat_id": "cat-20007",
-        "scat_id": "scat-30015",
-        "pro_id": "p-10011",
-        "u_id": "692181756",
-        "qty": "1",
-        "prize": "20",
-        "tax": "3",
-        "date": "2024-05-17 05:27:00",
-        "status": "pending",
-        "number": null,
-        "address": null
-    },
-    {
-        "cr_id": "52",
-        "inv_id": "inv-50023",
-        "cat_id": "cat-20007",
-        "scat_id": "scat-30015",
-        "pro_id": "p-10011",
-        "u_id": "692181756",
-        "qty": "1",
-        "prize": "20",
-        "tax": "3",
-        "date": "2024-05-17 05:27:24",
-        "status": "pending",
-        "number": null,
-        "address": null
+        "address": "Ankara"
     }
 ]
