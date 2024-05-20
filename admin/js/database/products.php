@@ -7,12 +7,10 @@ if (!isset($_SESSION['u_id'])) {
     die(json_encode(["type" => "error", "message" => "User not authenticated."]));
 }
 
-$current_user_id = $_SESSION['u_id']; // Get the current user's ID
+$current_user_id = $_SESSION['u_id'];
 
-// Prepare the SQL query to select products belonging to the same market
 $sql = "SELECT * FROM `product` WHERE `market_id` = (SELECT `u_id` FROM `register` WHERE `u_id` = {$current_user_id} AND `role_id` = 1)";
 
-// Apply search filters if any
 if (isset($_POST['search'])) {
     $search_value = $_POST['search'];
     $sql .= " AND (p_id LIKE '%{$search_value}%' 
@@ -25,13 +23,11 @@ if (isset($_POST['search'])) {
                 OR status LIKE '%{$search_value}%')";
 }
 
-// Apply specific ID filter if any
 if (isset($_POST["find"])) {
     $id = $_POST["find"];
     $sql .= " AND p_id = '$id'";
 }
 
-// Apply ordering
 if (isset($_POST['order'])) {
     $column = $_POST['order']['columns'];
     $order = $_POST['order']['dirs'];
@@ -41,7 +37,6 @@ if (isset($_POST['order'])) {
     $order = "ASC";
 }
 
-// Apply pagination
 if (isset($_POST["Limit_per_page"])) {
     $limit_per_page = $_POST["Limit_per_page"];
 } else {
@@ -72,11 +67,7 @@ $filtered_rows = $count_all_rows;
 $sno = 0;
 
 while ($row = mysqli_fetch_assoc($run_query)) {
-    if ($row["status"] == "show") {
-        $checked = "checked";
-    } else {
-        $checked = "";
-    }
+    $checked = ($row["status"] == "show") ? "checked" : "";
     $sno++;
     $subarray = array();
     $subarray[] = $sno;
@@ -87,8 +78,8 @@ while ($row = mysqli_fetch_assoc($run_query)) {
     $subarray[] = '<div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" name="check" ' . $checked . '>
     </div>';
-    $subarray[] = "<a class='btn btn-sm mr-1 btn-info material-symbols-outlined' id='EditBtn' data-id='{$row['p_id']}'>Edit</a>
-                   <a href='' class='btn btn-sm btn-danger material-symbols-outlined' id='delBtn' data-id='{$row['p_id']}'>Delete</a>";
+    $subarray[] = "<a class='btn btn-sm mr-1 btn-info material-symbols-outlined editBtn' data-id='{$row['p_id']}'>Edit</a>
+                   <a href='' class='btn btn-sm btn-danger material-symbols-outlined delBtn' data-id='{$row['p_id']}'>Delete</a>";
     $data[] = $subarray;
 }
 

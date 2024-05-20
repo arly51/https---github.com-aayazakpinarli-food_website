@@ -350,36 +350,33 @@ function MyTable(type ,url ,data,dataType,res_id){
            
 // insert update or deleted crud start here  
 //   getting records of item on dehave Id  click edit button
-$(document).on("click" , editBtn  , function(){
-  
+$(document).on("click", ".editBtn", function () {
   let id = $(this).data("id"),
-   formModalName = window.localStorage.getItem("TableName"),
-  url = `js/database/action/${formModalName}Action.php`,
-  ModalNames = `#EditModal`;
-  
-  console.log(id)
-  let data = {"action" : "get" , "id" :id}
-        $.ajax({
-          type: "POST",
-          url: url,
-          data: data,
-          dataType: "json",
-          success: function (response) {
-            console.log(response)
-            if(response.type == "success"){
-                  modalFire(ModalNames);
-                  $(`#FormEdit`).html(response.data)
-                 
-                  showTable();                    
-            }
-            
-          },
-          error : function(err){
-           console.log(err)
-            console.log(err.responseText)
+      formModalName = window.localStorage.getItem("TableName"),
+      url = `js/database/action/${formModalName}Action.php`,
+      ModalNames = `#EditModal`;
+
+  console.log(id);
+  let data = { "action": "get", "id": id };
+  $.ajax({
+      type: "POST",
+      url: url,
+      data: data,
+      dataType: "json",
+      success: function (response) {
+          console.log(response);
+          if (response.type == "success") {
+              modalFire(ModalNames);
+              $(`#FormEdit`).html(response.data);
+              showTable();
           }
-        });
-})
+      },
+      error: function (err) {
+          console.log(err);
+          console.log(err.responseText);
+      }
+  });
+});
 //this function  is used insert and update crud in php, dynamic form single time we making  they getting all  attribute from form  our work is very simple  
 $(document).on("submit", `form`, function (e) { 
   e.preventDefault();
@@ -710,5 +707,40 @@ MoneyEntryLoad();
 
 
   } );//main jquery
+
+
+  $(document).on("click", ".editBtn", function () {
+    var productId = $(this).data("id");
+    
+    // Make an AJAX request to fetch the product details
+    $.ajax({
+        type: "POST",
+        url: "js/database/action/productsAction.php",
+        data: { action: "get", id: productId },
+        dataType: "json",
+        success: function (response) {
+            if (response.type == "success") {
+                // Populate the form fields with the product details
+                $("#pID").val(response.data.p_id);
+                $("#pTitle").val(response.data.p_title);
+                $("#pSubtitle").val(response.data.p_subtitle);
+                $("#pPrize").val(response.data.p_prize);
+                $("#Cat_id").val(response.data.cat_id);
+                $("#Scat_id").val(response.data.scat_id);
+                $("#pDesc").val(response.data.p_desc);
+                $("#unique_id").val(response.data.unique_id);
+                
+                // Show the edit modal
+                $("#editModal").modal("show");
+            } else {
+                // Handle error case
+                console.log(response.msg);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.log(xhr.responseText);
+        }
+    });
+});
   
   
